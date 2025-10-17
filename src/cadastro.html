@@ -5,13 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+     <link rel="stylesheet" href="/css/cadastro.css">
     <title>Iniciar Sessão</title>
-    <link rel="stylesheet" href="/css/cadastro.css">
+   
 </head>
 <body>
+<header>
     <h1>SIRIUST</h1>
+</header>
+
+
+<!--Area do formulário-->
     <div class="pag-form">
-    <form action="pag-form">   <!--Area de formulário-->
+    <form action="index.html" method="get"> 
+
+
         
         <!--nome-->
         <label for="nome">Nome</label>
@@ -33,12 +42,12 @@
         
         <!--Botão-->
 
-        <button> <a href="index.html"></a>Enviar</a></button>
+        <button type="submit">Enviar</button>
        
 
 
-        <p>Não tens conta? <a href="registrar.html">Registre-se aqui</a></p>
-</body>
+        <p>Não tem conta? <a href="registrar.html">Registre-se aqui</a></p>
+
     </form>
     </div>
 </body>

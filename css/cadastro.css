@@ -1,34 +1,26 @@
-.body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #1e1e2f, #2a2a50);
-    font-family: "Poppins", sans-serif;
-  }
-  
- /* Estilização do formulário */
+
+/* Estilização do formulário */
   .pag-form {
-    background-color: #ffffff15;
-    backdrop-filter: blur(10px);
-    border: 1px solid #ffffff30;
-    border-radius: 5px;
-    width: 320px;
-    padding: 30px;
-    box-shadow: 0 0 20px #00000060;
-    text-align: center;
-    color: white;
+  margin: auto; /* Centraliza o formulário*/
+  background-color: rgba(218, 218, 218, 0.9);
+  padding: 34px;
+  border-radius: 10px; /* Bordas redondinhas */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3); /* Sombreamento */
+  width: 390px; /* largura fixa */
+  display: flex; /* Usando Flexbox */
+  justify-content: center; /* Centraliza na horizontal */
+  align-items: center;     /* Centraliza na vertical */
 }
 
+
+/* Estilização dos campos input*/
+form input {
+  background-color: rgba(218, 218, 218, 0.9); 
+}
+
+/* Espaçamento entre os campos do formulário */
   form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex; /* Usando Flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    gap: 15px; /* Espaçamento entre os campos */
   }
-
-h1 {
-    text-align: center;
-    color: rgb(0, 0, 0);
-
-}
