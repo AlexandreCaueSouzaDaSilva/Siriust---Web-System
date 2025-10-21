@@ -1,18 +1,31 @@
 <!--testando git-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área de cadastro</title>
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <title>Iniciar Sessão</title>
+   
 </head>
 <body>
-    <form action="pag-form">   <!--Area de formulário-->
+<header>
+    <h1>SIRIUST</h1>
+</header>
+
+
+<!--Area do formulário-->
+    <div class="pag-form">
+    <form action="index.html" method="get"> 
+
+
         
         <!--nome-->
         <label for="nome">Nome</label>
-        <input type="text"name="nome" id="nome" required>
+        <input type="text"name="nome" id="nome" placeholder="Seu nome de Usuário" required>
         
         <!--e-mail-->
         <label for="email">E-mail</label>
@@ -26,11 +39,17 @@
 
         <!--Senha-->
         <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" required>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
         
         <!--Botão-->
-        <button>Enviar</button>
+
+        <button type="submit">Enviar</button>
+       
+
+
+        <p>Não tem conta? <a href="registrar.html">Registre-se aqui</a></p>
+
     </form>
-    
+    </div>
 </body>
 </html>

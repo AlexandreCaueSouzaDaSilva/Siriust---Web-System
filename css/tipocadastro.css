@@ -1,0 +1,76 @@
+
+
+body{
+  margin: 0;    /*margem*/
+  height: 100vh;    /*altura*/
+  display: flex;
+  flex-direction: column;    /*alinhado como coluna*/
+  justify-content: center;    /* Centralizado na vertical*/
+  align-items: center;    /* Centralizado na horizontal*/
+  background: linear-gradient(135deg, #F2F6F6, #81A7A9, #044E54);    /*Fundo principal da página*/
+  font-family: 'Inria Serif', serif;    /*fonte*/
+}
+
+
+header {
+  background-color: #ffffff23;    /*cor do fundo do cabeçalho*/
+  width: 100%;    /* largura do cabeçalho */
+  height: 80px;    /*altura do cabeçalho*/
+  display: flex;
+  justify-content: center;    /*título centralizado na horizontal*/
+  align-items: center;    /*título centralizado na vertical*/
+  position: fixed;    /*mantém tudo fixo no cabeçalho*/
+  top: 0;    /*parte de cima*/
+  left: 0;    /*a esquerda*/
+  z-index: 10;    /*garante que fica acima do conteúdo... ainda não peguei bem*/
+}
+
+
+h1{
+  text-align: center;   /*Centraliza o título*/
+  color: #001a1d;     /*Cor*/
+  font-family: 'Inria Serif', serif;    /*fonte*/
+  margin: 0;    /*margem*/
+}
+
+
+
+.botao-container{
+  background-color: #F1EEE9;    /*cor do fundo do form*/
+  padding: 40px 50px;   /*espaçamento interno*/
+  border-radius: 10px;   /*Bordas redondinhas*/
+  box-shadow: 0 14px 28px #044d5480;   /*Sombreamento*/
+  display: flex;   /* Usando Flexbox */
+  flex-direction: column;    /*alinhado como coluna*/
+  align-items: center;    /*Centraliza na vertical*/
+  width: 360px;   /*largura fixa*/
+}
+
+
+.botao-container p{
+  color: #002225;
+  margin-top:0px;    /*margem de cima*/
+  font-size: 25px;    /*tamanho máximo da fonte*/
+  text-align: center;    /*alinhamento de texto*/
+}
+
+button {
+  background-color: #044E54;    /*cor do botão*/
+  color: white;    /*cor do q tiver dentro do botão*/
+  border-radius: 5px;    /*sem borda*/
+  padding: 10px;    /*expaçamento interno*/
+  border-radius: 5px;    /*arredonda as pontas*/
+  font-weight: bold;   /*fonte do texto no botão*/
+  cursor: pointer;    /*muda o cursor quando passa pelo botão*/
+  transition: 0.3s;    /*tempo de mudança do botão acionado*/
+  width: 60%;    /*tamanho total*/
+  display: block;    /*formato bloco*/
+  margin: 5px auto 0;    /*margem*/
+  text-align: center;    /*alinhamento de texto "centro"*/
+  box-shadow: 0 3px 6px #00000033;    /*sombra da caixa*/
+}
+
+button:hover {    /*mudança no botão acionado*/
+  background-color: #033a3f;    /*cor do botão acionado*/
+}
+
