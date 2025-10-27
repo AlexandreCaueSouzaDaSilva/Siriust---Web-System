@@ -1,0 +1,12 @@
+body {
+    margin: 0; /* Remove margens padrão */
+    height: 100vh; /* Altura total na visualização do corpo*/
+    background: linear-gradient(135deg, #ffffff, #2a2a50), #14143f; /* Gradiente arrastando */
+    font-family: "Poppins", sans-serif; /* Fonte */
+}
+
+/* Estilização do título */
+h1 {
+    text-align: center; /* Centraliza o título */
+    color: rgb(0, 0, 0); /* Cor  */
+}

@@ -1,0 +1,13 @@
+:root {
+    --color-bg-main: #2C5F5E; /* Verde escuro do fundo */
+    --color-bg-form: #F0F5F0; /* Fundo do formulário - parece mais claro */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-header-bg: #fff;
+    --color-input-bg: #fff;
+    --color-section-title: #2C5F5E; /* Cor dos títulos de seção */
+    --color-button-bg: #2C5F5E;
+    --color-border: #ccc;
+    --color-placeholder: #888;
+}
+
