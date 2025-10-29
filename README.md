@@ -24,7 +24,12 @@ Siriust é um sistema web completo com CRUD funcional e arquitetura limpa para a
 
 
 ## Tecnologias usadas por nós:
+- HTML5, CSS3, PHP, JavaScript.
+Biliotecas e Frameworks:
+- Zend Framework, Doctrine ORM
 - HTML5, CSS3, ...
 
+(Backend) - PHP
+(Banco de Dados) - nenhum
 (Backend) - vazio
 (Banco de Dados) - vazio
