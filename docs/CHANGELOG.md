@@ -69,4 +69,11 @@
 - renomeei arquivos pra identificação mais precisa
 - rescrevi arquivos de acordo com versão anterior (antes da commit 8.0)
 - deletei arquivos atualmente sem utilidade
-- 
+
+
+## 9.0 - atualização index (01/11/2025) - feito por Laryssa
+(lary-branch)
+
+- adicionei cabeçalho a index-cliente
+- adicionei cabeçalho a index-profissional
+- adicionei style.css a ambas as paginas (index-cliente.css)
