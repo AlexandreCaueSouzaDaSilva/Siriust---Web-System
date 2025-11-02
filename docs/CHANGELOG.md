@@ -77,3 +77,15 @@
 - adicionei cabeçalho a index-cliente
 - adicionei cabeçalho a index-profissional
 - adicionei style.css a ambas as paginas (index-cliente.css)
+
+## 9.1 - index-profissional esquecido (01/11/2025) - feito por Laryssa
+(lary-branch)
+
+- adicionei o cabeçalho esquecido na agina profissional
+
+## 9.2 - atualizando propria modificação (02/11/2025) - feito por Laryssa
+(lary-branch)
+
+- fazendo com sono, fiz duas commit esquecendo de partes achando q ja tinha feito...
+- coloquei o cabeçalho do index profficional
+- linkei os botões de tipocadastro aos devidos index's 
