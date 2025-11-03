@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
     <link rel="stylesheet" href="/css/entrar.css">
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-    <title>Iniciar Sessão</title>
+    <title>Cadastro Profissional</title>
    
 </head>
 <body>
@@ -19,7 +19,7 @@
 
 <!--Area do formulário-->
     <div class="pag-form">
-    <form action="index-cliente.html" method="get"> 
+    <form action="index-profissional.html" method="get"> 
 
     
         
@@ -30,14 +30,19 @@
 
         <!--Senha-->
         <label for="senha"></label>
-        <input type="password" name="senha" id="senha" placeholder="Senha">
+        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+
+         <!--nome-->
+        <label for="nome"></label>
+        <input type="text"name="nome" id="nome" placeholder="Nome" required>
+        
         
         <!--Botão-->
-        <button type="submit">Entrar</button>
+        <button type="submit">Cadastrar</button>
        
 
 
-        <p>ou <br> <a href="tipocadastro.html">Cadastre-se</a></p>
+        <p>ou <br> <a href="tipocadastro.html">Voltar</a></p>
 
     </form>
     </div>

@@ -87,5 +87,12 @@
 (lary-branch)
 
 - fazendo com sono, fiz duas commit esquecendo de partes achando q ja tinha feito...
-- coloquei o cabeçalho do index profficional
+- coloquei o cabeçalho do index profissional
 - linkei os botões de tipocadastro aos devidos index's 
+
+## 10.0 - cadastro inicial (03/11/2025) - feito por Laryssa
+(lary-branch)
+
+- fiz cadastro inicial cliente e profissional
+- defini atualização final do código da pag de cadastro inicial
+- adicionei novo caminhos de botões de navegação entre paginas
