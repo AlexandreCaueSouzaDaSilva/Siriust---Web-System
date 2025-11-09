@@ -21,15 +21,15 @@ Siriust é um sistema web completo com CRUD funcional e arquitetura limpa para a
 - (Nosso CRUD) - criar, ler, apagar e deletar dados
 - Sistema para uso do **Profissional**
 - Sistema para uso do **Paciente**
+- adicionar, editar, deletar, manipular dados de paacientes **uso dos profisssionais**
+- visualizar consultas, atualizar dados de paciente **uso do Paciente**
 
 
 ## Tecnologias usadas por nós:
-- HTML5, CSS3, PHP, JavaScript.
-Biliotecas e Frameworks:
+- HTML5, CSS3, PHP.
+Biliotecas e Frameworks/Versões:
 - Zend Framework, Doctrine ORM
-- HTML5, CSS3, ...
+- HTML5, CSS3.
 
-(Backend) - PHP
+(Backend) - PHP + Zend Framework + Doctrine ORM  
 (Banco de Dados) - nenhum
-(Backend) - vazio
-(Banco de Dados) - vazio

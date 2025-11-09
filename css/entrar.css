@@ -93,13 +93,23 @@ button:hover {    /*mudança no botão acionado*/
   background-color: #033a3f;    /*cor do botão acionado*/
 }
 
-
+/*Espaço dentro do form entre os campos de texto e o texto "ou" abaixo*/
 .pag-form p {
-  margin-top:0px;    /*margem de cima*/
-  font-size: 14px;    /*tamanho máximo da fonte*/
-  text-align: center;    /*alinhamento de texto*/
+  margin-top:10px;    /* espaço igual em cima */
+  margin-bottom: 0px; /* espaço igual embaixo */
+  font-size: 14px;
+  text-align: center;
+  color: #033a3f;
+  opacity: 0.8;
 }
 
+#cadastre-se-nome {
+  margin-top: 0; /* zera pra o “ou” centralizar certinho */
+  font-size: 14px;
+  text-align: center;
+  color: #044E54;
+  font-size: 17px;
+}
 
 .pag-form a {
   color: #044E54;    /*cor do link*/

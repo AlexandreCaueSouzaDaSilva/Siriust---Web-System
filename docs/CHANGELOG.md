@@ -96,3 +96,13 @@
 - fiz cadastro inicial cliente e profissional
 - defini atualização final do código da pag de cadastro inicial
 - adicionei novo caminhos de botões de navegação entre paginas
+
+## 10.1 - Leve ajustes e correções (09/11/2025) - feito por Cauê
+
+- Correção do background no viewport no index-cliente.html
+- Modificação necessária no fallback.css
+- Adição de footer centralizado nas páginas
+- ajustes no index-cliente.css
+- documentação do guia de instalação iniciado!
+- documentação melhorada
+

@@ -4,11 +4,28 @@ body {
     margin: 0; /* Remove margens padrão */
     height: 100vh; /* Altura total na visualização do corpo*/
     background: linear-gradient(135deg, #ffffff, #2a2a50), #14143f; /* Gradiente arrastando */
-    font-family: "Poppins", sans-serif; /* Fonte */
+    font-family: "Poppins", sans-serif; /* Fonte usada */
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+    overflow-y: hidden; /* Evita barra de rolagem vertical */
 }
 
 /* Estilização do título */
 h1 {
     text-align: center; /* Centraliza o título */
     color: rgb(0, 0, 0); /* Cor  */
+}
+
+footer {
+    text-align: center; /* Centraliza o rodapé */
+    padding: 5px; /* Espaçamento interno */
+    color: white; /* Cor do texto */
+    position: fixed;   /* Fixamos o rodapé na parte inferior */
+    bottom: 0; /* Posiciona na parte inferior */
+    width: 100%;  /* Largura total */
+    font-size: 13px; /* Tamanho da fonte */
+}
+
+html {
+  overflow-x: hidden; /* evita o fundo branco quando arrastar pro lado */
+  overflow-y:hidden; /* evita a barra de rolagem vertical desnecessária */
 }

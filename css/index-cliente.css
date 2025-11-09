@@ -11,13 +11,15 @@ body{
 
 header {
   background-color: #ffffff23;
-  width: 100%;
+  width: 100%; 
   display: flex;
-  flex-direction: column;   /*empilhar titulo es nav em coluna*/
-  position: fixed;
+  flex-direction: column;
+  position: fixed; /*mantém tudo fixo no cabeçalho*/
   top: 0;
   left: 0;
   z-index: 10;
+  box-sizing: border-box;
+  max-width: 100vw; /* não ultrapassa a tela */
 }
 
 header h1 {
@@ -44,7 +46,7 @@ nav ul {
 }
 
 nav ul li a {
-  display: block;    /*pra ocupar toda área de click*/
+  display: block; /* Faz o link ocupar todo o espaço do item da lista */
   color: white;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -60,7 +62,9 @@ nav ul li a:hover {
 /* Espaçamento para o conteúdo não ficar embaixo do header fixo */
 main {
   margin-top: 130px;
-  padding: 20px;
-  width: 100%;
+  padding: 20px; /* Espaçamento interno */
+  width: 100%; /* largura total */
+  box-sizing: border-box; /* inclui padding e border na largura total */
+  max-width: 100vw; /* não ultrapassa a tela */
 }
 
