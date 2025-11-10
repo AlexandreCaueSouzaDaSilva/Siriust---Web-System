@@ -46,8 +46,25 @@ h1{
   width: 360px;   /*largura fixa*/
 }
 
+.botao-container p {
+  margin-top:0px;    /*margem de cima*/
+  font-size: 14px;    /*tamanho máximo da fonte*/
+  text-align: center;    /*alinhamento de texto*/
+}
 
-.botao-container p{
+
+.botao-container a {
+  color: #044E54;    /*cor do link*/
+  text-decoration: none;    /*teóricamente tira o sublinhado do link*/
+}
+
+
+.botao-container a:hover {
+  text-decoration: underline;   
+}
+
+
+.botao-container h2{
   color: #002225;
   margin-top:0px;    /*margem de cima*/
   font-size: 25px;    /*tamanho máximo da fonte*/
