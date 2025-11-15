@@ -22,9 +22,63 @@
         </ul>
     </nav>
 </header>
-    <!--Conteúdo Principal do index.html -->
-<main>
 
+<!--Conteúdo Principal do index.html -->      
+    <!-- tr= linha--> <!-- th= cabeçalho--> <!-- td= dado-->
+<main>
+<section class="dashboard">
+<div class="acoes-filtro">
+  <div class="filtro-busca">
+  <input type="text" id="busca" placeholder="Buscar paciente...">
+      <select id="filtro">
+        <option value="id">ID Hospital</option>
+        <option value="nome">Nome</option>
+        <option value="idade">Idade</option>
+        <option value="data">Data</option>
+        <option value="consulta">Consulta</option>
+      </select>
+    <button id="botao-filtro">Filtrar</button>
+  </div>
+
+  <div class="botoes-crud">
+    <button id="botao-adicionar">Adicionar</button>
+    <button id="botao-editar">Editar</button>
+    <button id="botao-deletar">Deletar</button>
+  </div>
+</div>
+
+<!-- Tabela -->
+
+<div class="tabela-container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID Hospital</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Data da Consulta</th>
+      <th>Consulta</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+
+<!-- Exemplo de linha -->
+  <tr>
+    <td>HX018970</td>
+    <td>Maria Silva</td>
+    <td>29</td>
+    <td>08/11/2025</td>
+    <td>Clínico Geral</td>
+    <td>
+       <button class="editar">EDITAR</button>
+       <button class="deletar">DELETAR</button>
+    </td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+</section>
 
 
 </main>
