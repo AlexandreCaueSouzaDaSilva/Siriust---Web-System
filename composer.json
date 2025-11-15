@@ -1,0 +1,17 @@
+{
+    "name": "caue/siriust",
+    "description": "Backend do sistema de gestão da clínica (Zend + Doctrine)",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Caue\\Siriust\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AlexandreCaueSouzadaSilva",
+            "email": "caue8766@gmail.com"
+        }
+    ],
+    "require": {}
+}

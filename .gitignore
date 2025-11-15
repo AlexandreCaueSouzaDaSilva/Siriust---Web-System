@@ -1,0 +1,9 @@
+# Composer
+/vendor/
+
+# Cache / lixo
+.DS_Store
+Thumbs.db
+
+# VSCode configs
+.vscode/
