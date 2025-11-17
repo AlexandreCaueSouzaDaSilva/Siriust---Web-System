@@ -106,3 +106,11 @@
 - documentação do guia de instalação iniciado!
 - documentação melhorada
 
+# 10.2 Fiz algumas correções no HTML do Cliente e no CSS que estava Muito simples (16.11.2025)
+
+- alterações do codigo html form-cliente.html
+- adicionados divs
+- modificação no form-int.css
+- adicionado @media para responsividade dos campos do formulário
+- adicionado label, correção no cadastro do cliente
+

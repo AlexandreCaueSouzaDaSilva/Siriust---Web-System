@@ -1,0 +1,222 @@
+/* --- Variáveis de Cor --- */
+:root {
+    --bg-dark-teal: #2c4848; 
+    --form-container-bg: #eaf0f0; 
+    --form-field-bg: #fdfaf6;
+    --text-dark: #333;
+    --text-light: #f5f5f5;
+    --border-color: #5d7a7a;
+    --header-font: 'Merriweather', serif;
+    --body-font: 'Lato', sans-serif;
+    --gap: 1rem; /* Variável para espaçamento uniforme */
+}
+
+/* --- Reset & Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-dark-teal);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Layout Principal --- */
+main {
+    flex-grow: 1;
+    padding: 2rem var(--gap);
+    overflow-y: auto; 
+}
+
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-light);
+    background-color: var(--bg-dark-teal);
+    opacity: 0.8;
+}
+
+/* --- Container do Formulário --- */
+.fomulario-cliente-paciente {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--form-container-bg);
+    padding: 2rem 2.5rem;
+    border: 2px solid var(--bg-dark-teal);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Títulos e Separadores --- */
+h2 { /* Título principal */
+    font-family: var(--header-font);
+    text-align: center;
+    color: var(--bg-dark-teal);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+h4 { /* Títulos de seção com linhas */
+    font-family: var(--header-font);
+    color: var(--bg-dark-teal);
+    text-align: center;
+    margin: 2.5rem 0 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+
+h4::before, h4::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--border-color);
+    opacity: 0.7;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1.5rem 0;
+    opacity: 0.5;
+}
+
+/* --- Seções do Formulário (Flexbox Genérico) --- */
+section > .input-group,
+section > section {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: var(--gap); 
+    margin-bottom: var(--gap); /* Espaçamento entre as linhas/grupos */
+}
+
+/* --- Estilos de Campos de Form (Inputs/Textarea) --- */
+input:not([type="radio"]):not([type="submit"]),
+textarea {
+    background-color: var(--form-field-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: var(--text-dark);
+    flex-grow: 1;
+    flex-basis: 200px; /* Tamanho base menor para 3 ou 4 colunas */
+    width: auto;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    flex-basis: 100%; /* Ocupa a linha inteira */
+}
+
+/* Ajustes de largura */
+.input-group input[placeholder="Nome Completo"] {
+    flex-basis: 60%; /* Mais largo */
+}
+.input-group input[placeholder="Raça/Cor"] {
+    flex-basis: 30%; /* Mais estreito */
+}
+input[name="numero-endereco-cliente"] {
+    flex-basis: 100px; 
+    flex-grow: 0;
+}
+
+/* --- Estilo dos Radio Buttons (Gênero e Tipo Sanguíneo) --- */
+/* O texto "Sexo:" ou "Tipo Sanguíneo:" */
+.radio-label {
+    font-weight: bold;
+    color: var(--bg-dark-teal);
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    flex-shrink: 0; /* Não encolhe */
+}
+
+/* Estilizar os labels ao redor dos radios para parecerem botões/caixas */
+form label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--form-field-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    transition: all 0.2s;
+    flex-grow: 1; /* Permite que os botões de rádio cresçam */
+    flex-basis: 100px;
+    justify-content: center; /* Centraliza o texto no "botão" */
+}
+
+/* Cor de seleção quando o radio está marcado (aplica à label) */
+input[type="radio"]:checked + label {
+    background-color: #dce5e5;
+    border-color: var(--bg-dark-teal);
+    box-shadow: 0 0 0 1px var(--bg-dark-teal);
+}
+
+/* Corrige o seletor para que o :checked funcione corretamente com o label */
+.radio-group-genero label input[type="radio"] {
+    display: none;
+}
+form section:nth-of-type(3) label input[type="radio"] {
+    display: none;
+}
+
+/* --- Estilo do Botão Enviar --- */
+input[type="submit"] {
+    display: block;
+    width: 50%;
+    min-width: 200px;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    font-family: var(--header-font);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--bg-dark-teal);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3a6b6b;
+}
+
+/* --- Responsividade --- */
+/* Ajustes para telas menores */
+/* adicionado @media para responsividade dos campos do formulário */
+@media (max-width: 768px) {
+    .fomulario-cliente-paciente {
+        padding: 1.5rem;
+    }
+
+    /* Força todos os campos a ocuparem a largura total em telas pequenas */
+    input:not([type="radio"]):not([type="submit"]),
+    textarea,
+    .input-group input[placeholder="Nome Completo"],
+    .input-group input[placeholder="Raça/Cor"] {
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+    
+    /* Permite que os botões de rádio de gênero fiquem em linha, mas ocupando espaço igual */
+    .radio-group-genero label {
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+}

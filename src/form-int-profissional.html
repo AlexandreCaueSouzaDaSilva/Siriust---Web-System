@@ -11,139 +11,24 @@
   <title>Página do Paciente</title>
 </head>
 <body>
-<header>
-</header>
-
 <header class="barra-flutuante">
 <nav><h3>Siriust</h3></nav>
+</header>
 
-<div class="container">
-        <header>
-            <h1>Cadastro de Cliente/Paciente</h1>
-            <p>Preencha os dados abaixo para criar sua ficha na clínica.</p>
-        </header>
-    <form id="formCadastroCliente">
-        <fieldset class="form-section"></fieldset>
-    <p><h1>Dados do Cliente/Paciente</h1></p>
-
-    <div class="input-group">
-            <input type="text" id="nome-completo" name="nome_completo" placeholder="NomeCompleto">
-            <input type="text" id="nome-social" name="nome_social" placeholder="Nome social">
-    </div>
-
-    <div class="input-group multiple-fields">
-             <input type="text" id="cpf" name="cpf" placeholder="Nº CPF">
-             <input type="date" id="data-nasc" name="data_nasc" placeholder="Data de nasc.">
-             <input type="text" id="municipio-nasc" name="municipio_nasc" placeholder="Município de nasc.">
-             <input type="text" id="uf-nasc" name="uf_nasc" placeholder="UF">
-             <input type="text" id="raca-cor" name="raca_cor" placeholder="Raça/Cor">
-             <div class="radio-group-sexo">
-                <label>Sexo F: <input type="radio" name="sexo" value="F"></label>
-                <label>M: <input type="radio" name="sexo" value="M"></label>
-             </div>
-         </div>
-
-         <div class="input-group multiple-fields">
-                        <input type="tel" id="celular" name="celular" placeholder="Nº Celular">
-                        <input type="email" id="email" name="email" placeholder="E-mail">
-                    </div>
- 
-         <div class="input-group multiple-fields">
-            <input type="text" id="escolaridade" name="escolaridade" placeholder="Escolaridade">
-            <input type="text" id="estado-civil" name="estado_civil" placeholder="Estado Civil">
-                <label for="frequenta-escola" class="frequenta-escola-label">Frequenta Escola?</label>
-                    <div class="radio-group-escola">
-                <label>Sim <input type="radio" name="frequenta_escola" value="Sim"></label>
-                <label>Não <input type="radio" name="frequenta_escola" value="Não"></label>
-                    </div>
-                 </div>
-         </section>
-
-             <fieldset class="form-section"></fieldset>
-
-         <section class="form-section">
-             <h2>DADOS RESIDENCIAIS</h2>
-             <div class="input-group multiple-fields">
-                 </div>
-
-             <div class="input-group multiple-fields">
-                </div>    
-         </section>      
-
-            <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro">
-            <input type="text" id="numero" name="numero" placeholder="Número">
-            <input type="text" id="complemento" name="complemento" placeholder="Complemento">
-            <input type="text" id="bairro" name="bairro" placeholder="Bairro/Distrito">
-            <input type="text" id="cidade" name="cidade" placeholder="Cidade">
-            <input type="text" id="uf-endereco" name="uf_endereco" placeholder="UF">
-        </div>
-
-         <div class="input-group multiple-fields">
-             <input type="text" id="ponto-referencia" name="ponto_referencia" placeholder="Ponto de Referência">
-             <input type="text" id="cep" name="cep" placeholder="CEP">
-             <input type="tel" id="telefone-res" name="telefone_res" placeholder="Telefone">
-        </div>
-    </section>
-
-            <fieldset class="form-section"></fieldset>
-
-     <section class="form-section">
-                    <h2>DADOS de Saúde</h2>
-
-             <div class="input-group multiple-fields">
-              <label class="tipo-sanguineo-label">Tipo Sanguíneo:</label>
-                        <div class="radio-group-sangue">
-               <label>A <input type="radio" name="tipo_sanguineo" value="A"></label>
-                <label>B <input type="radio" name="tipo_sanguineo" value="B"></label>
-                <label>AB <input type="radio" name="tipo_sanguineo" value="AB"></label>
-                <label>O <input type="radio" name="tipo_sanguineo" value="O"></label>
-                <label>+ <input type="radio" name="fator_rh" value="+"></label>
-                <label>- <input type="radio" name="fator_rh" value="-"></label>
-         </div>
-           <input type="text" id="cartao-sus" name="cartao_sus" placeholder="Nº do Cartão Nacional de Saúde (CNS)">
-         </div>
-
-                    <div class="input-group multiple-fields">
-            <input type="text" id="plano-saude" name="plano_saude" placeholder="Plano de saúde">
-            <input type="text" id="numero-carteirinha" name="numero_carteirinha" placeholder="Nº da Carteirinha">
-         </div>
-
-                    <div class="input-group full-width-group add-item">
-            <input type="text" id="alergia" name="alergia" placeholder="Alergia">
-            <input type="text" id="alergia-desc" name="alergia_desc" placeholder="Descrição">
-             <button type="button" class="add-button">Adicionar +</button>
-                    </div>
-                    
-                    <div class="input-group full-width-group add-item">
-            <input type="text" id="medicacao" name="medicacao" placeholder="Medicação de uso contínuo">
-            <input type="text" id="medicacao-desc" name="medicacao_desc" placeholder="Descrição">
-             <button type="button" class="add-button">Adicionar +</button>
-        </div>
-
-                    <div class="input-group full-width-group add-item">
-            <input type="text" id="condicoes-pre" name="condicoes_pre" placeholder="Condições de saúde pré-existentes">
-            <input type="text" id="condicoes-pre-desc" name="condicoes_pre_desc" placeholder="Descrição">
-            <button type="button" class="add-button">Adicionar +</button>
-        </div>
-            </section>       
-
-        <section class="form-section">
-                    <h2>CONTATO DE EMERGÊNCIA</h2>
-        <div class="input-group multiple-fields contact-emergency">
-            <input type="text" id="nome-contato" name="nome_contato" placeholder="Nome do Contato">
-            <input type="text" id="grau-parentesco" name="grau_parentesco" placeholder="Grau de Parentesco">
-            <button type="button" class="add-button">Adicionar +</button>
-            <input type="tel" id="numero-contato" name="numero_contato" placeholder="Nº Contato">
-        </div>
-        </section>
-
-                <button type="submit" class="submit-button">Enviar</button>
-            </form>
-        
-    </div>
+<div class="formulario-profissional">
+<form action="" method="get">
 
 
-</main>
-    
+
+
+
+
+
+</form>
+</div>
+
+
+
+<footer>© 2025 SIRIUST</footer>
 </body>
 </html>
