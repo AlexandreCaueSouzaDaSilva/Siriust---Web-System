@@ -8,27 +8,131 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/index-cliente.css">
-  <title>Página do Paciente</title>
+  <title>Página do Profissional</title>
 </head>
 <body>
-<header class="barra-flutuante">
-<nav><h3>Siriust</h3></nav>
-</header>
+  <main>
+      <header class="barra-flutuante">
+      <nav><h3>Siriust</h3></nav>
+      </header> 
+      
+      <!-- Formulario todo -->
 
 <div class="formulario-profissional">
 <form action="" method="get">
 
+<h2>Cadastro de Profissional</h2>
+
+<!-- Primeira Seção -->
+<section>
+    <h4>Dados do Profissional</h4>
+    <div class="input-group">
+        <input type="text" name="nome-profissional" id="nome-profissional" placeholder="Nome Completo"></input>
+        <input type="text" name="especialidade-profissional" id="especialidade-profissional" placeholder="Especialidade"></input>
+    </div>
+
+    <div class="input-group">
+        <input type="text" name="cpf-profissional" id="cpf-profissional" placeholder="CPF"></input>
+        <input type="text" name="rg-profissional" id="rg-profissional" placeholder="RG"></input>
+    </div>
+
+    <div class="input-group">
+        <input type="text" name="data-nascimento-profissional" id="data-nascimento-profissional" placeholder="Data de Nascimento"></input>
+    </div>
+
+    <div class="input-group">
+        <input type="radio" name="genero-profissional" value="Masculino">Masculino</input>
+        <input type="radio" name="genero-profissional" value="Feminino">Feminino</input>
+        <input type="radio" name="genero-profissional" value="Outro">Outro</input>
+    </div>
+
+    <div class="input-group">
+        <input type="text" name="nacionalidade-profissional" id="nacionalidade-profissional" placeholder="Nacionalidade"></input>
+        <input type="text" name="pais-profissional" id="pais-profissional" placeholder="País"></input>
+    </div>
+
+    <div class="input-group">
+        <input type="text" name="nome-mae-profissional" id="nome-mae-profissional" placeholder="Nome da Mãe"></input>
+    </div>
+
+    <div class="input-group">
+        <input type="text" name="telefone-profissional" id="telefone-profissional" placeholder="Telefone"></input>
+        <input type="text" name="email-profissional" id="email-profissional" placeholder="E-mail"></input>
+    </div>
+</section>
+<hr>
+
+<!-- Segunda Seção -->
+<section>
+    <h4>Dados de Registro</h4>
+    <div class="input-group">
+        <input type="text" name="registro-profissional" id="registro-profissional" placeholder="Número de Registro Profissional"></input>
+        <input type="text" name="instituicao-registro" id="instituicao-registro" placeholder="Instituição de Registro"></input>
+    </div>
 
 
+    <div class="input-group">
+        <input type="text" name="curso-profissional" id="curso-profissional" placeholder="Curso"></input>
+        <input type="text" name="nivel-formacao" id="nivel-formacao" placeholder="Nível de Formação"></input>
+    </div>
 
+    <div class="input-group">
+        <input type="text" name="ano-conclusao" id="ano-conclusao" placeholder="Ano de Conclusão"></input>
+        <input type="text" name="instituicao-ensino" id="instituicao-ensino" placeholder="Instituição de Ensino"></input>
+    </div>
+</section>
+<hr>
 
+<!-- Terceira Seção -->
+<section>
+    <h4>Dados Residenciais</h4>
+
+        <input type="text" name="endereco-profissional" id="endereco-profissional" placeholder="Endereço"></input>
+        <input type="text" name="numero-endereco-profissional" id="numero-endereco-profissional" placeholder="Número"></input>
+        <input type="text" name="complemento-endereco-profissional" id="complemento-endereco-profissional" placeholder="Complemento"></input>
+        <input type="text" name="bairro-profissional" id="bairro-profissional" placeholder="Bairro"></input>
+        <input type="text" name="cidade-profissional" id="cidade-profissional" placeholder="Cidade"></input>
+        <input type="text" name="estado-profissional" id="estado-profissional" placeholder="Estado"></input>
+        <input type="text" name="cep-profissional" id="cep-profissional" placeholder="CEP"></input>
+        <input type="text" name="codigo ibge municipio" id="codigo ibge municipio" placeholder="Código IBGE Município"></input>
+</section>
+<hr>
+
+<!-- Quarta Seção -->
+<section> 
+    <h4> Especialidade </h4>
+      <div class="input-group">
+        <input type="text" name="Código CBO" id="codigo-cbo" placeholder="Código CBO"></input>
+        <textarea name="Descrição CBO" id="descricao-cbo" placeholder="Descrição CBO"></textarea>
+      </div>
+</section>
+<hr>
+
+<!-- Fim do Formulário -->
+ 
+<section>
+   <h4>Locais de Atendimento </h4>
+       <input type="text" name="endereco-profissional" id="endereco-profissional" placeholder="Endereço"></input>
+        <input type="text" name="cidade-profissional" id="cidade-profissional" placeholder="Cidade"></input>
+        <input type="text" name="estado-profissional" id="estado-profissional" placeholder="Estado"></input>
+        <input type="text" name="cep-profissional" id="cep-profissional" placeholder="CEP"></input>
+        <input type="text" name="telefone-profissional" id="telefone-profissional" placeholder="Telefone"></input>
+        <input type="text" name="codigo ibge municipio" id="codigo ibge municipio" placeholder="Código IBGE Município"></input>
+</section>
+<hr>
+
+<!-- Botão de Enviar -->
+
+<div class="input-group">
+    <button type="submit">Cadastrar Profissional</button>
+</div>
 
 
 </form>
 </div>
-
-
-
+</main>
 <footer>© 2025 SIRIUST</footer>
 </body>
 </html>
+
+

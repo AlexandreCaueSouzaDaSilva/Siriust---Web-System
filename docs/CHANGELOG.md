@@ -114,3 +114,8 @@
 - adicionado @media para responsividade dos campos do formulário
 - adicionado label, correção no cadastro do cliente
 
+#11.0 Fiz novamente correções, no HTML do prossional agora e fiz o css bonitinho. (17.11.2025)
+
+- fiz o codigo baseado no cliente
+- fiz um pouco do css
+- 

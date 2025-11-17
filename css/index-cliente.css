@@ -76,3 +76,6 @@ footer {
   background-color: #033a3f;
   width: 100%;
 }
+footer p {
+  margin: 5px 0;
+}
