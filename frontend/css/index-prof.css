@@ -1,4 +1,4 @@
-/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+        /* ===== MESMA BASE DA VERSÃO PACIENTE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +9,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #F2F6F6, #81A7A9, #044E54);
     min-height: 100vh;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-x: hidden;
 }
 
-/* ===== NAVBAR SUPERIOR ===== */
 .navbar {
-    position: fixed; /* Fica fixo no topo */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -25,10 +24,9 @@ body {
     justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000; /* Fica acima de tudo */
+    z-index: 1000;
 }
 
-/* Logo e nome do sistema */
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -38,7 +36,6 @@ body {
     font-weight: bold;
 }
 
-/* Botão de abrir/fechar sidebar (hamburguer) */
 .menu-toggle {
     background: none;
     border: none;
@@ -54,7 +51,6 @@ body {
     background: rgba(255,255,255,0.1);
 }
 
-/* Breadcrumbs (migalhas de pão: Home > Dashboard) */
 .breadcrumbs {
     flex: 1;
     margin-left: 30px;
@@ -67,7 +63,6 @@ body {
     font-weight: 500;
 }
 
-/* Menu do usuário (perfil, sair) */
 .user-menu {
     display: flex;
     align-items: center;
@@ -87,32 +82,28 @@ body {
     cursor: pointer;
 }
 
-/* ===== SIDEBAR (MENU LATERAL) ===== */
 .sidebar {
     position: fixed;
-    top: 70px; /* Começa abaixo da navbar */
+    top: 70px;
     left: 0;
-    width: 250px; /* Largura quando aberta */
-    height: calc(100vh - 70px); /* Altura total menos navbar */
+    width: 250px;
+    height: calc(100vh - 70px);
     background: white;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease; /* Animação suave */
+    transition: transform 0.3s ease;
     z-index: 999;
-    overflow-y: auto; /* Scroll se tiver muitos itens */
+    overflow-y: auto;
 }
 
-/* Estado quando sidebar está fechada */
 .sidebar.closed {
-    transform: translateX(-250px); /* Move pra esquerda (esconde) */
+    transform: translateX(-250px);
 }
 
-/* Lista de itens do menu */
 .sidebar-menu {
     list-style: none;
     padding: 20px 0;
 }
 
-/* Cada item do menu */
 .sidebar-menu li {
     margin: 5px 0;
 }
@@ -128,41 +119,35 @@ body {
     font-weight: 500;
 }
 
-/* Hover (mouse em cima) */
 .sidebar-menu a:hover {
     background: linear-gradient(90deg, #F2F6F6, #81A7A9);
-    padding-left: 30px; /* Desloca um pouco pra direita */
+    padding-left: 30px;
 }
 
-/* Item ativo (página atual) */
 .sidebar-menu a.active {
     background: linear-gradient(90deg, #044E54, #0a4d4d);
     color: white;
     border-left: 4px solid #00e1ff;
 }
 
-/* Ícone do menu (emoji simples) */
 .menu-icon {
     font-size: 1.3em;
     width: 25px;
     text-align: center;
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
 .main-content {
-    margin-top: 70px; /* Espaço da navbar */
-    margin-left: 250px; /* Espaço da sidebar */
+    margin-top: 70px;
+    margin-left: 250px;
     padding: 30px;
     min-height: calc(100vh - 70px);
-    transition: margin-left 0.3s ease; /* Animação quando sidebar fecha */
+    transition: margin-left 0.3s ease;
 }
 
-/* Quando sidebar está fechada, conteúdo ocupa tudo */
 .main-content.expanded {
     margin-left: 0;
 }
 
-        /* Card de conteúdo (caixas brancas) */
 .content-card {
     background: white;
     border-radius: 10px;
@@ -178,7 +163,6 @@ body {
     padding-bottom: 10px;
 }
 
-/* Grid de cards (para dashboard) */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -204,34 +188,121 @@ body {
     font-size: 0.9em;
 }
 
-/* ===== RESPONSIVO (MOBILE) ===== */
+        /* ===== ESTILOS EXTRAS PARA CRUD ===== */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #044E54;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0a4d4d;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #333;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.patient-table th {
+    background: #044E54;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.patient-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-table tr:hover {
+    background: #f8f9fa;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.badge-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-250px); /* Começa fechada no mobile */
-    }
+    transform: translateX(-250px);
+}
 
-    .sidebar.open {
-        transform: translateX(0); /* Abre quando clica */
-    }
+.sidebar.open {
+    transform: translateX(0);
+}
 
-    .main-content {
-        margin-left: 0; /* Sem margem no mobile */
-    }
+.main-content {
+    margin-left: 0;
+}
 
-    .breadcrumbs {
-        display: none; /* Esconde breadcrumbs em telas pequenas */
-    }
+.breadcrumbs {
+    display: none;
+}
 
-    .navbar-brand {
-        font-size: 1.3em;
+.navbar-brand {
+    font-size: 1.3em;
+}
+
+.action-buttons {
+    flex-direction: column;
     }
 }
 
-/* ===== ESCONDE CONTEÚDOS (mostrados via JS) ===== */
 .page-content {
-    display: none; /* Todas as páginas começam escondidas */
+    display: none;
 }
 
 .page-content.active {
-    display: block; /* Apenas a ativa é mostrada */
+    display: block;
 }

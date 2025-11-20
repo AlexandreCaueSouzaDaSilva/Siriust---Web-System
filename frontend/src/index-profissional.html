@@ -3,85 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href=" "> <!--FAvicon icone-->
-    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-    <link rel="stylesheet" href="/css/index-cliente.css">
-    <title>Página Inicial</title>
+    <link rel="stylesheet" href="/css/index-prof.css">
+    <title>Siriust Inicio</title>
 </head>
 <body>
-<header>
-    <h1>SIRIUST</h1>
-    <!--Barra de Navegação Principal-->
-    <nav>
-        <ul>
-            <li><a href="especialidades">Especialidades</a></li>
-            <li><a href="historico">Histórico</a></li>
-            <li><a href="protuarios">Prontuários</a></li>
-            <li><a href="lembrete">Lembrete</a></li>
-            <li><a href="teleconsulta">Teleconsulta</a></li>
-        </ul>
+     <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        
+        <div class="navbar-brand">
+            🏥 SIRIUST
+        </div>
+        
+        <div class="breadcrumbs">
+            Profissional / <span id="currentPage">Dashboard</span>
+        </div>
+        
+        <div class="user-menu">
+            <span>Dr. João Silva</span>
+            <div class="user-avatar">JS</div>
+        </div>
     </nav>
-</header>
 
-<!--Conteúdo Principal do index.html -->      
-    <!-- tr= linha--> <!-- th= cabeçalho--> <!-- td= dado-->
-<main>
-<section class="dashboard">
-<div class="acoes-filtro">
-  <div class="filtro-busca">
-  <input type="text" id="busca" placeholder="Buscar paciente...">
-      <select id="filtro">
-        <option value="id">ID Hospital</option>
-        <option value="nome">Nome</option>
-        <option value="idade">Idade</option>
-        <option value="data">Data</option>
-        <option value="consulta">Consulta</option>
-      </select>
-    <button id="botao-filtro">Filtrar</button>
-  </div>
+    <!-- ===== SIDEBAR (MENU COM OPÇÕES EXTRAS PARA PROFISSIONAL) ===== -->
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#dashboard" class="active" onclick="navigateTo('dashboard', 'Dashboard')">
+                    <span class="menu-icon">📊</span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#pacientes" onclick="navigateTo('pacientes', 'Gerenciar Pacientes')">
+                    <span class="menu-icon">👥</span>
+                    Gerenciar Pacientes
+                </a>
+            </li>
+            <li>
+                <a href="#agenda" onclick="navigateTo('agenda', 'Agenda')">
+                    <span class="menu-icon">📅</span>
+                    Agenda
+                </a>
+            </li>
+            <li>
+                <a href="#especialidades" onclick="navigateTo('especialidades', 'Especialidades')">
+                    <span class="menu-icon">🩺</span>
+                    Especialidades
+                </a>
+            </li>
+            <li>
+                <a href="#historico" onclick="navigateTo('historico', 'Histórico')">
+                    <span class="menu-icon">📜</span>
+                    Histórico
+                </a>
+            </li>
+            <li>
+                <a href="#prontuarios" onclick="navigateTo('prontuarios', 'Prontuários')">
+                    <span class="menu-icon">📋</span>
+                    Prontuários
+                </a>
+            </li>
+            <li>
+                <a href="#teleconsulta" onclick="navigateTo('teleconsulta', 'Teleconsulta')">
+                    <span class="menu-icon">💻</span>
+                    Teleconsulta
+                </a>
+            </li>
+            <li>
+                <a href="#relatorios" onclick="navigateTo('relatorios', 'Relatórios')">
+                    <span class="menu-icon">📈</span>
+                    Relatórios
+                </a>
+            </li>
+            <li>
+                <a href="#configuracoes" onclick="navigateTo('configuracoes', 'Configurações')">
+                    <span class="menu-icon">⚙️</span>
+                    Configurações
+                </a>
+            </li>
+        </ul>
+    </aside>
 
-  <div class="botoes-crud">
-    <button id="botao-adicionar">Adicionar</button>
-    <button id="botao-editar">Editar</button>
-    <button id="botao-deletar">Deletar</button>
-  </div>
-</div>
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- PÁGINA: DASHBOARD PROFISSIONAL -->
+        <div id="page-dashboard" class="page-content active">
+            <div class="content-card">
+                <h2>Bem-vindo, Dr. João Silva</h2>
+                <p>Painel de controle profissional</p>
+            </div>
 
-<!-- Tabela -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3>127</h3>
+                    <p>Total de Pacientes</p>
+                </div>
+                <div class="stat-card">
+                    <h3>8</h3>
+                    <p>Consultas Hoje</p>
+                </div>
+                <div class="stat-card">
+                    <h3>15</h3>
+                    <p>Consultas Semana</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3</h3>
+                    <p>Urgências Pendentes</p>
+                </div>
+            </div>
 
-<div class="tabela-container">
-  <table>
-    <thead>
-    <tr>
-      <th>ID Hospital</th>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Data da Consulta</th>
-      <th>Consulta</th>
-      <th>Ações</th>
-    </tr>
-    </thead>
-    <tbody>
+            <div class="content-card">
+                <h2>Próximas Consultas Hoje</h2>
+                <table class="patient-table">
+                    <tr>
+                        <th>Horário</th>
+                        <th>Paciente</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>Maria Silva</td>
+                        <td>Consulta</td>
+                        <td><span class="badge badge-success">Confirmada</span></td>
+                    </tr>
+                    <tr>
+                        <td>10:30</td>
+                        <td>José Santos</td>
+                        <td>Retorno</td>
+                        <td><span class="badge badge-warning">Aguardando</span></td>
+                    </tr>
+                    <tr>
+                        <td>14:00</td>
+                        <td>Ana Costa</td>
+                        <td>Teleconsulta</td>
+                        <td><span class="badge badge-success">Confirmada</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-<!-- Exemplo de linha -->
-  <tr>
-    <td>HX018970</td>
-    <td>Maria Silva</td>
-    <td>29</td>
-    <td>08/11/2025</td>
-    <td>Clínico Geral</td>
-    <td>
-       <button class="editar">EDITAR</button>
-       <button class="deletar">DELETAR</button>
-    </td>
-  </tr>
-    </tbody>
-  </table>
-</div>
-</section>
+        <!-- PÁGINA: GERENCIAR PACIENTES (CRUD) -->
+        <div id="page-pacientes" class="page-content">
+            <div class="content-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Gerenciar Pacientes</h2>
+                    <button class="btn btn-primary" onclick="alert('Adicionar novo paciente')">
+                        ➕ Novo Paciente
+                    </button>
+                </div>
 
+                <table class="patient-table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Última Consulta</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr>
+                        <td>#001</td>
+                        <td>Maria Silva</td>
+                        <td>123.456.789-00</td>
+                        <td>(81) 99999-9999</td>
+                        <td>08/11/2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary" style="font-size:0.85em;" onclick="alert('Ver detalhes')">👁️ Ver</button>
+                                <button class="btn btn-warning" style="font-size:0.85em;" onclick="alert('Editar')">✏️ Editar</button>
+                                <button class="btn btn-danger" style="font-size:0.85em;" onclick="alert('Excluir')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>José Santos</td>
+                        <td>987.654.321-00</td>
+                        <td>(81) 98888-8888</td>
+                        <td>05/11/2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary" style="font-size:0.85em;" onclick="alert('Ver detalhes')">👁️ Ver</button>
+                                <button class="btn btn-warning" style="font-size:0.85em;" onclick="alert('Editar')">✏️ Editar</button>
+                                <button class="btn btn-danger" style="font-size:0.85em;" onclick="alert('Excluir')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td>Ana Costa</td>
+                        <td>456.789.123-00</td>
+                        <td>(81) 97777-7777</td>
+                        <td>01/11/2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary" style="font-size:0.85em;" onclick="alert('Ver detalhes')">👁️ Ver</button>
+                                <button class="btn btn-warning" style="font-size:0.85em;" onclick="alert('Editar')">✏️ Editar</button>
+                                <button class="btn btn-danger" style="font-size:0.85em;" onclick="alert('Excluir')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-</main>
+        <!-- PÁGINA: AGENDA -->
+        <div id="page-agenda" class="page-content">
+            <div class="content-card">
+                <h2>Agenda de Consultas</h2>
+                <button class="btn btn-primary">➕ Agendar Consulta</button>
+                <div style="margin-top: 20px;">
+                    <h3>Hoje - 12/11/2025</h3>
+                    <p>09:00 - Maria Silva (Cardiologia)</p>
+                    <p>10:30 - José Santos (Retorno)</p>
+                    <p>14:00 - Ana Costa (Teleconsulta)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PÁGINA: ESPECIALIDADES -->
+        <div id="page-especialidades" class="page-content">
+            <div class="content-card">
+                <h2>Especialidades Atendidas</h2>
+                <ul>
+                    <li>🫀 Cardiologia</li>
+                    <li>🧠 Neurologia</li>
+                    <li>🦴 Ortopedia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PÁGINA: HISTÓRICO -->
+        <div id="page-historico" class="page-content">
+            <div class="content-card">
+                <h2>Histórico de Atendimentos</h2>
+                <table class="patient-table">
+                    <tr>
+                        <th>Data</th>
+                        <th>Paciente</th>
+                        <th>Tipo</th>
+                        <th>Diagnóstico</th>
+                    </tr>
+                    <tr>
+                        <td>08/11/2025</td>
+                        <td>Maria Silva</td>
+                        <td>Consulta</td>
+                        <td>Hipertensão controlada</td>
+                    </tr>
+                    <tr>
+                        <td>05/11/2025</td>
+                        <td>José Santos</td>
+                        <td>Retorno</td>
+                        <td>Recuperação pós-cirúrgica</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- PÁGINA: PRONTUÁRIOS -->
+        <div id="page-prontuarios" class="page-content">
+            <div class="content-card">
+                <h2>Prontuários Eletrônicos</h2>
+                <p>📄 Prontuário - Maria Silva (#001)</p>
+                <p>📄 Prontuário - José Santos (#002)</p>
+                <p>📄 Prontuário - Ana Costa (#003)</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA: TELECONSULTA -->
+        <div id="page-teleconsulta" class="page-content">
+            <div class="content-card">
+                <h2>Teleconsultas Agendadas</h2>
+                <p><strong>14:00 - Ana Costa</strong></p>
+                <button class="btn btn-success">🎥 Iniciar Videochamada</button>
+            </div>
+        </div>
+
+        <!-- PÁGINA: RELATÓRIOS -->
+        <div id="page-relatorios" class="page-content">
+            <div class="content-card">
+                <h2>Relatórios e Estatísticas</h2>
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <h3>450</h3>
+                        <p>Consultas no Mês</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>92%</h3>
+                        <p>Taxa de Presença</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PÁGINA: CONFIGURAÇÕES -->
+        <div id="page-configuracoes" class="page-content">
+            <div class="content-card">
+                <h2>Configurações do Perfil</h2>
+                <p><strong>Nome:</strong> Dr. João Silva</p>
+                <p><strong>CRM:</strong> 12345-PE</p>
+                <p><strong>Especialidade:</strong> Cardiologia</p>
+                <p><strong>Email:</strong> joao.silva@siriust.com</p>
+                <button class="btn btn-primary">✏️ Editar Perfil</button>
+            </div>
+        </div>
+
+    </main>
+<script src="/JavaScript/index_prof.js"></script>
 </body>
-<footer>© 2025 SIRIUST</footer>
 </html>
