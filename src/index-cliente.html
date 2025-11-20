@@ -3,32 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href=" "> <!--FAvicon icone-->
-    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-    <link rel="stylesheet" href="/css/index-cliente.css"> <!-- CSS ESPECIFICO DESSA PAGINA -->
-    <title>Página Inicial</title>
+    <link rel="stylesheet" href="/css/index-cliente.css".css>
+    <title>Siriust Inicio</title>
 </head>
 <body>
-<header>
-    <h1>SIRIUST</h1>
-    <!--Barra de Navegação Principal-->
-    <nav>
-        <ul>
-            <li><a href="especialidades">Especialidades</a></li>
-            <li><a href="historico">Histórico</a></li>
-            <li><a href="prontuarios">Prontuários</a></li>
-            <li><a href="lembrete">Lembrete</a></li>
-            <li><a href="teleconsulta">Teleconsulta</a></li>
-        </ul>
+      
+   <!-- ===== BARRA SUPERIOR ===== -->
+    <nav class="navbar">
+        <!-- Botão hamburguer (abre/fecha sidebar) -->
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        
+        <!-- Logo e nome -->
+        <div class="navbar-brand">
+            🏥 SIRIUST
+        </div>
+        
+        <!-- Breadcrumbs (mostra onde você está) -->
+        <div class="breadcrumbs">
+            Paciente / <span id="currentPage">Dashboard</span>
+        </div>
+        
+        <!-- Menu do usuário -->
+        <div class="user-menu">
+            <span>Maria Silva</span>
+            <div class="user-avatar">MS</div>
+        </div>
     </nav>
-</header>
-    <!--Conteúdo Principal do index.html -->
-<main>
 
+    <!-- ===== MENU LATERAL ===== -->
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#dashboard" class="active" onclick="navigateTo('dashboard', 'Dashboard')">
+                    <span class="menu-icon">📊</span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#especialidades" onclick="navigateTo('especialidades', 'Especialidades')">
+                    <span class="menu-icon">🩺</span>
+                    Especialidades
+                </a>
+            </li>
+            <li>
+                <a href="#historico" onclick="navigateTo('historico', 'Histórico')">
+                    <span class="menu-icon">📜</span>
+                    Histórico
+                </a>
+            </li>
+            <li>
+                <a href="#prontuarios" onclick="navigateTo('prontuarios', 'Prontuários')">
+                    <span class="menu-icon">📋</span>
+                    Prontuários
+                </a>
+            </li>
+            <li>
+                <a href="#lembretes" onclick="navigateTo('lembretes', 'Lembretes')">
+                    <span class="menu-icon">⏰</span>
+                    Lembretes
+                </a>
+            </li>
+            <li>
+                <a href="#teleconsulta" onclick="navigateTo('teleconsulta', 'Teleconsulta')">
+                    <span class="menu-icon">💻</span>
+                    Teleconsulta
+                </a>
+            </li>
+            <li>
+                <a href="#configuracoes" onclick="navigateTo('configuracoes', 'Configurações')">
+                    <span class="menu-icon">⚙️</span>
+                    Configurações
+                </a>
+            </li>
+        </ul>
+    </aside>
 
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- PÁGINA: DASHBOARD -->
+        <div id="page-dashboard" class="page-content active">
+            <div class="content-card">
+                <h2>Bem-vindo ao SIRIUST</h2>
+                <p>Acompanhe suas consultas e informações médicas.</p>
+            </div>
 
-</main>
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3>3</h3>
+                    <p>Consultas Agendadas</p>
+                </div>
+                <div class="stat-card">
+                    <h3>12</h3>
+                    <p>Consultas Realizadas</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2</h3>
+                    <p>Lembretes Pendentes</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Prontuários</p>
+                </div>
+            </div>
 
+            <div class="content-card">
+                <h2>Próximas Consultas</h2>
+                <p><strong>15/11/2025 - 14:00</strong> - Dr. João Silva (Cardiologia)</p>
+                <p><strong>18/11/2025 - 10:30</strong> - Dra. Ana Costa (Dermatologia)</p>
+                <p><strong>22/11/2025 - 16:00</strong> - Dr. Pedro Santos (Ortopedia)</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA: ESPECIALIDADES -->
+        <div id="page-especialidades" class="page-content">
+            <div class="content-card">
+                <h2>Especialidades Médicas</h2>
+                <p>Escolha a especialidade para agendar consulta:</p>
+                <ul>
+                    <li>🫀 Cardiologia</li>
+                    <li>🧠 Neurologia</li>
+                    <li>🦴 Ortopedia</li>
+                    <li>👁️ Oftalmologia</li>
+                    <li>🦷 Odontologia</li>
+                    <li>👶 Pediatria</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PÁGINA: HISTÓRICO -->
+        <div id="page-historico" class="page-content">
+            <div class="content-card">
+                <h2>Histórico de Consultas</h2>
+                <table style="width:100%; border-collapse: collapse;">
+                    <tr style="background:#044E54; color:white;">
+                        <th style="padding:10px;">Data</th>
+                        <th style="padding:10px;">Médico</th>
+                        <th style="padding:10px;">Especialidade</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">08/11/2025</td>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">Dr. João Silva</td>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">Cardiologia</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">01/11/2025</td>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">Dra. Ana Costa</td>
+                        <td style="padding:10px; border-bottom:1px solid #ddd;">Dermatologia</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- PÁGINA: PRONTUÁRIOS -->
+        <div id="page-prontuarios" class="page-content">
+            <div class="content-card">
+                <h2>Meus Prontuários</h2>
+                <p>📄 Prontuário - Cardiologia (08/11/2025)</p>
+                <p>📄 Prontuário - Dermatologia (01/11/2025)</p>
+                <p>📄 Prontuário - Ortopedia (25/10/2025)</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA: LEMBRETES -->
+        <div id="page-lembretes" class="page-content">
+            <div class="content-card">
+                <h2>Lembretes</h2>
+                <p>⏰ Tomar medicamento às 08:00</p>
+                <p>⏰ Consulta amanhã às 14:00</p>
+                <p>⏰ Exame de sangue dia 20/11</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA: TELECONSULTA -->
+        <div id="page-teleconsulta" class="page-content">
+            <div class="content-card">
+                <h2>Teleconsulta</h2>
+                <p>Consultas online disponíveis</p>
+                <button style="background:#044E54; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+                    Iniciar Videochamada
+                </button>
+            </div>
+        </div>
+
+        <!-- PÁGINA: CONFIGURAÇÕES -->
+        <div id="page-configuracoes" class="page-content">
+            <div class="content-card">
+                <h2>Configurações</h2>
+                <p><strong>Nome:</strong> Maria Silva</p>
+                <p><strong>Email:</strong> maria.silva@email.com</p>
+                <p><strong>Telefone:</strong> (81) 99999-9999</p>
+                <button style="background:#044E54; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+                    Editar Perfil
+                </button>
+            </div>
+        </div>
+
+    </main>
+    <script src="/JavaScript/index_client.js"></script>
 </body>
-<footer>© 2025 SIRIUST</footer>
 </html>
