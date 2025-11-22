@@ -3,7 +3,7 @@
 ## Desenvolvedores do Projeto
 - Alexandre Cauê - [GitHub](https://github.com/AlexandreCaueSouzaDaSilva)
 - Laryssa Mileide - [GitHub](https://github.com/lary-scripts)
-- Caio - [GitHub](https://github.com/caioxd7)
+- Caio Henrique- [GitHub](https://github.com/caioxd7)
 
 
 ## ATENÇÃO!!!
@@ -29,7 +29,13 @@ Siriust é um sistema web completo com CRUD funcional e arquitetura limpa para a
 - HTML5, CSS3, PHP.
 Biliotecas e Frameworks/Versões:
 - Zend Framework, Doctrine ORM
-- HTML5, CSS3.
 
-(Backend) - PHP + Zend Framework + Doctrine ORM  
+
+(Backend) - PHP + Laminas (Zend Framework) + Doctrine ORM  
 (Banco de Dados) - nenhum
+
+
+## Arquitetura BACKEND HÍBRIDA:
+- DDD (Domain Driven Design)
+- MVC (Model-View-Controller)
+- Arquitetura Modular (Laminas Framework)

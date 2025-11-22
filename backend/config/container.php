@@ -3,7 +3,7 @@
 use Laminas\Mvc\Application;
 use Laminas\Stdlib\ArrayUtils;
 
-// Retrieve configuration
+// Carrega o arquivo de configuração do aplicativo
 $appConfig = require __DIR__ . '/application.config.php';
 if (file_exists(__DIR__ . '/development.config.php')) {
     /** @var array $devConfig */

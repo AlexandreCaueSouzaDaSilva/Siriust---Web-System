@@ -10,38 +10,45 @@
 
 return [
     // Retrieve list of modules used in this application.
-    'modules' => require __DIR__ . '/modules.config.php',
+    'modules' => [
+        'Laminas\Router',
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'Application',
+    ],
 
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => [
         // use composer autoloader instead of laminas-loader
-        'use_laminas_loader' => false,
+        // Ajustado para true para evitar problemas de autoload em alguns ambientes.
+        'use_laminas_loader' => true,
 
         // An array of paths from which to glob configuration files after
         // modules are loaded. These effectively override configuration
         // provided by modules themselves. Paths may use GLOB_BRACE notation.
+        // Simplificado para padrões compatíveis em Windows e ambientes diversos.
         'config_glob_paths' => [
-            realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php',
+            __DIR__ . '/autoload/*.global.php',
+            __DIR__ . '/autoload/*.local.php',
         ],
 
         // Whether or not to enable a configuration cache.
-        // If enabled, the merged configuration will be cached and used in
-        // subsequent requests.
-        'config_cache_enabled' => true,
+        // Em desenvolvimento, desabilitar para facilitar alterações sem limpar cache.
+        'config_cache_enabled' => false,
 
         // The key used to create the configuration cache file name.
         'config_cache_key' => 'application.config.cache',
 
         // Whether or not to enable a module class map cache.
-        // If enabled, creates a module class map cache which will be used
-        // by in future requests, to reduce the autoloading process.
-        'module_map_cache_enabled' => true,
+        // Desabilitado em desenvolvimento.
+        'module_map_cache_enabled' => false,
 
         // The key used to create the class map cache file name.
         'module_map_cache_key' => 'application.module.cache',
 
         // The path in which to cache merged configuration.
-        'cache_dir' => 'data/cache/',
+        // Ajustado para apontar para backend/data/cache (relativo à pasta config).
+        'cache_dir' => __DIR__ . '/../data/cache',
 
         // Whether or not to enable modules dependency checking.
         // Enabled by default, prevents usage of modules that depend on other modules
