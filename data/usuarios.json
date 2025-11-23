@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "João da Silva",
+    "email": "joao@teste.com",
+    "senha": "$2y$10$1JDInIQC3fx5Wc4L8K7i7uTSZfuS6/3E9Pzq.6gT4/8CCqH4hQxqi",
+    "tipo": "paciente",
+    "ativo": true
+  },
+  {
+    "nome": "Dra. Ana Pereira",
+    "email": "ana@clinica.com",
+    "senha": "$2y$10$hg5jcVFUpZ0rSV6B9EnjRu1aA.2b13bLRFfONVNa6VBblSx9FZaNm",
+    "tipo": "profissional",
+    "ativo": true
+  }
+]

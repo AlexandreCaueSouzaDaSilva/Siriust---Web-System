@@ -1,20 +1,24 @@
 <?php
 
-namespace Domain\Entity\Paciente;
+namespace Domain\Entity\Profissional;
 
-class Paciente
+class Profissional
 {
     private string $nome;
     private int $idade;
     private string $senha;
     private string $data_nasc;
     private string $cpf;
+    private string $crm; 
 
-    public function __construct(string $nome, int $idade, string $cpf, string $data_nasc, string $senha)
+    public function __construct(string $nome, int $idade, string $cpf, string $data_nasc, string $senha, string $crm)
     {
-
+        $this->nome = $nome;
+        $this->idade = $idade;
+        $this->senha = $senha;
         $this->cpf = $cpf;
         $this->data_nasc = $data_nasc;
+        $this->crm = $crm;
     }
 
     // Getters
@@ -40,5 +44,9 @@ class Paciente
     public function getCpf(): string
     {
         return $this->cpf;
+    }
+    public function getCrm(): string
+    {
+        return $this->crm;
     }
 }

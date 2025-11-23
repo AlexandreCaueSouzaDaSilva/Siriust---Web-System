@@ -36,6 +36,7 @@ Biliotecas e Frameworks/Versões:
 
 
 ## Arquitetura BACKEND HÍBRIDA:
+
 - DDD (Domain Driven Design)
 - MVC (Model-View-Controller)
 - Arquitetura Modular (Laminas Framework)

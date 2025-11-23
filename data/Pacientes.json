@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "João Silva",
+        "idade": 30,
+        "cpf": "123.456.789-00",
+        "data_nasc": "1994-05-15"
+    },
+    {
+        "nome": "Maria Santos",
+        "idade": 25,
+        "cpf": "987.654.321-00",
+        "data_nasc": "1999-08-22"
+    },
+    {
+        "nome": "Alexandre Caue",
+        "idade": 40,
+        "cpf": "111.222.333-44",
+        "data_nasc": "1983-11-30"
+    }
+]
