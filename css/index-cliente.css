@@ -1,81 +1,184 @@
-body{
-  margin: 0;    /*tira margem padrão*/
-  min-height: 100vh;    /*altura minima*/
-  display: flex;    /*ativa o flexbox*/
-  flex-direction: column;    /*alinhado como coluna*/
-  justify-content: center;    /* Centralizado na vertical*/
-  background: linear-gradient(135deg, #F2F6F6, #81A7A9, #044E54);    /*Fundo principal da página*/
-  font-family: 'Inria Serif', serif;    /*fonte*/
+/* ======== Fundo da Página ======== */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #b7d0d3, #2c6c70);
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-
-header {
-  background-color: #ffffff23;
-  width: 100%; 
-  display: flex;
-  flex-direction: column;
-  position: fixed; /*mantém tudo fixo no cabeçalho*/
-  top: 0;
-  left: 0;
-  z-index: 10;
-  box-sizing: border-box;
-  max-width: 100vw; /* não ultrapassa a tela */
+/* ======== Barra superior ======== */
+.barra-flutuante {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
 }
 
-header h1 {
-  font-size: 2.5em;
-  font-weight: 600;
-  margin: 0;
-  padding: 20px 0;
-  text-align: center;
-}
- 
-nav {
-  background-color: #0a4d4d;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+/* Ajustado para h2 conforme você alterou no HTML */
+.barra-flutuante nav h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
+/* ======== Container geral ======== */
+.formulario-profissional {
+    width: 60%;
+    margin: 50px auto;
+    background: #e7f0f1;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+    border: 1px solid #c3d1d1;
 }
 
-nav ul li a {
-  display: block; /* Faz o link ocupar todo o espaço do item da lista */
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  font-weight: 400;
-  font-size: 0.95em;
-  padding: 10px 15px;
+.formulario-profissional h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2d2e;
+    font-size: 26px;
 }
 
-nav ul li a:hover {
-  background-color: #00e1ff33;
+/* ======== Seções ======== */
+section {
+    margin-bottom: 35px;
 }
 
-/* Espaçamento para o conteúdo não ficar embaixo do header fixo */
-main {
-  margin-top: 130px;
-  padding: 20px; /* Espaçamento interno */
-  width: 100%; /* largura total */
-  box-sizing: border-box; /* inclui padding e border na largura total */
-  max-width: 100vw; /* não ultrapassa a tela */
+section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1f2d2e;
+    text-align: center;
+    border-bottom: 1px solid #b7c7c7;
+    padding-bottom: 5px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* ======== Linha separadora ======== */
+hr {
+    border: none;
+    border-top: 1px solid #b7c7c7;
+    margin: 30px 0;
+}
+
+/* ======== Estilo dos inputs ======== */
+.input-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #9bb6b6;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #ffffff;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2c6c70;
+    box-shadow: 0 0 4px rgba(44,108,112,0.4);
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* ======== Inputs individuais fora do group ======== */
+section input {
+    margin-bottom: 15px;
+}
+
+/* ======== Botões de rádio ======== */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.input-group input[type="radio"] {
+    width: auto;
+}
+
+/* ======== Botão de envio ======== */
+input[type="submit"] {
+    display: block;
+    width: 40%;
+    margin: 30px auto;
+    padding: 12px 20px;
+    background: #2c6c70;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+input[type="submit"]:hover {
+    background: #1f5054;
+}
+
+/* ======== Rodapé ======== */
 footer {
-  margin-top: auto;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  background-color: #033a3f;
-  width: 100%;
+    text-align: center;
+    padding: 15px;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-top: 40px;
 }
-footer p {
-  margin: 5px 0;
+
+/* ======== Forçar rolagem no documento e rolagem suave ======== */
+html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto; /* garante que a página possa rolar verticalmente */
+    scroll-behavior: smooth;
+}
+
+/* Caso algum contêiner esteja usando posição fixa que impeça rolagem,
+   esta regra ajuda a garantir que o body responda ao scroll do mouse. */
+body {
+    -webkit-overflow-scrolling: touch; /* melhor experiência em iOS */
+}
+
+/* Scrollbar personalizada (WebKit: Chrome, Edge, Opera) ======== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c7d7d7;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c6c70;
+    border-radius: 5px;
+    border: 2px solid #c7d7d7; /* cria um "espaço" ao redor do thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f5054;
+}
+
+/* Scroll para Fire*/
+* {
+    scrollbar-width: thin; /* thin | auto | none */
+    scrollbar-color: #2c6c70 #c7d7d7; /* thumb e track */
 }

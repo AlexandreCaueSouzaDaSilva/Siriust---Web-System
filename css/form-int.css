@@ -1,4 +1,4 @@
-/* --- Variáveis de Cor --- */
+/* --- variáveis de cor --- */
 :root {
     --bg-dark-teal: #2c4848; 
     --form-container-bg: #eaf0f0; 
@@ -8,14 +8,24 @@
     --border-color: #5d7a7a;
     --header-font: 'Merriweather', serif;
     --body-font: 'Lato', sans-serif;
-    --gap: 1rem; /* Variável para espaçamento uniforme */
+    --gap: 1rem; /* variável para espaçamento uniforme */
 }
 
-/* --- Reset & Globais --- */
+/* --- reset e globais --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+  margin: 0;    /*tira margem padrão*/
+  min-height: 100vh;    /*altura minima*/
+  display: flex;    /*ativa o flexbox*/
+  flex-direction: column;    /*alinhado como coluna*/
+  justify-content: center;    /* centralizado na vertical*/
+  background: linear-gradient(135deg, #F2F6F6, #81A7A9, #044E54);    /*fundo principal da página*/
+  font-family: 'Inria Serif', serif;    /*fonte*/
 }
 
 body {
@@ -27,7 +37,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- Layout Principal --- */
+/* --- layout principal --- */
 main {
     flex-grow: 1;
     padding: 2rem var(--gap);
@@ -43,7 +53,7 @@ footer {
     opacity: 0.8;
 }
 
-/* --- Container do Formulário --- */
+/* --- container do formulário --- */
 .fomulario-cliente-paciente {
     max-width: 900px;
     margin: 0 auto;
@@ -54,8 +64,8 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Títulos e Separadores --- */
-h2 { /* Título principal */
+/* --- títulos e separadores --- */
+h2 { /* título principal */
     font-family: var(--header-font);
     text-align: center;
     color: var(--bg-dark-teal);
@@ -63,7 +73,7 @@ h2 { /* Título principal */
     font-size: 2rem;
 }
 
-h4 { /* Títulos de seção com linhas */
+h4 { /* títulos de seção com linhas */
     font-family: var(--header-font);
     color: var(--bg-dark-teal);
     text-align: center;
@@ -90,16 +100,16 @@ hr {
     opacity: 0.5;
 }
 
-/* --- Seções do Formulário (Flexbox Genérico) --- */
+/* --- seções do formulário (flexbox genérico) --- */
 section > .input-group,
 section > section {
     display: flex;
     flex-wrap: wrap; 
     gap: var(--gap); 
-    margin-bottom: var(--gap); /* Espaçamento entre as linhas/grupos */
+    margin-bottom: var(--gap); /* espaçamento entre as linhas/grupos */
 }
 
-/* --- Estilos de Campos de Form (Inputs/Textarea) --- */
+/* --- estilos de campos de form (inputs/textarea) --- */
 input:not([type="radio"]):not([type="submit"]),
 textarea {
     background-color: var(--form-field-bg);
@@ -110,30 +120,30 @@ textarea {
     font-size: 1rem;
     color: var(--text-dark);
     flex-grow: 1;
-    flex-basis: 200px; /* Tamanho base menor para 3 ou 4 colunas */
+    flex-basis: 200px; /* tamanho base menor para 3 ou 4 colunas */
     width: auto;
 }
 
 textarea {
     min-height: 100px;
     resize: vertical;
-    flex-basis: 100%; /* Ocupa a linha inteira */
+    flex-basis: 100%; /* ocupa a linha inteira */
 }
 
-/* Ajustes de largura */
+/* ajustes de largura */
 .input-group input[placeholder="Nome Completo"] {
-    flex-basis: 60%; /* Mais largo */
+    flex-basis: 60%; /* mais largo */
 }
 .input-group input[placeholder="Raça/Cor"] {
-    flex-basis: 30%; /* Mais estreito */
+    flex-basis: 30%; /* mais estreito */
 }
 input[name="numero-endereco-cliente"] {
     flex-basis: 100px; 
     flex-grow: 0;
 }
 
-/* --- Estilo dos Radio Buttons (Gênero e Tipo Sanguíneo) --- */
-/* O texto "Sexo:" ou "Tipo Sanguíneo:" */
+/* --- estilo dos radio buttons (gênero e tipo sanguíneo) --- */
+/* o texto "sexo:" ou "tipo sanguíneo:" */
 .radio-label {
     font-weight: bold;
     color: var(--bg-dark-teal);
@@ -143,7 +153,7 @@ input[name="numero-endereco-cliente"] {
     flex-shrink: 0; /* Não encolhe */
 }
 
-/* Estilizar os labels ao redor dos radios para parecerem botões/caixas */
+/* estilizar os labels ao redor dos radios para parecerem botões/caixas */
 form label {
     display: inline-flex;
     align-items: center;
@@ -155,19 +165,19 @@ form label {
     font-weight: bold;
     user-select: none;
     transition: all 0.2s;
-    flex-grow: 1; /* Permite que os botões de rádio cresçam */
+    flex-grow: 1; /* permite que os botões de rádio cresçam */
     flex-basis: 100px;
-    justify-content: center; /* Centraliza o texto no "botão" */
+    justify-content: center; /* centraliza o texto no "botão" */
 }
 
-/* Cor de seleção quando o radio está marcado (aplica à label) */
+/* cor de seleção quando o radio está marcado (aplica à label) */
 input[type="radio"]:checked + label {
     background-color: #dce5e5;
     border-color: var(--bg-dark-teal);
     box-shadow: 0 0 0 1px var(--bg-dark-teal);
 }
 
-/* Corrige o seletor para que o :checked funcione corretamente com o label */
+/* corrige o seletor para que o :checked funcione corretamente com o label */
 .radio-group-genero label input[type="radio"] {
     display: none;
 }
@@ -175,7 +185,7 @@ form section:nth-of-type(3) label input[type="radio"] {
     display: none;
 }
 
-/* --- Estilo do Botão Enviar --- */
+/* --- estilo do botão enviar --- */
 input[type="submit"] {
     display: block;
     width: 50%;
@@ -197,15 +207,15 @@ input[type="submit"]:hover {
     background-color: #3a6b6b;
 }
 
-/* --- Responsividade --- */
-/* Ajustes para telas menores */
+/* --- responsividade --- */
+/* ajustes para telas menores */
 /* adicionado @media para responsividade dos campos do formulário */
 @media (max-width: 768px) {
     .fomulario-cliente-paciente {
         padding: 1.5rem;
     }
 
-    /* Força todos os campos a ocuparem a largura total em telas pequenas */
+    /* força todos os campos a ocuparem a largura total em telas pequenas */
     input:not([type="radio"]):not([type="submit"]),
     textarea,
     .input-group input[placeholder="Nome Completo"],
@@ -214,9 +224,15 @@ input[type="submit"]:hover {
         flex-grow: 1;
     }
     
-    /* Permite que os botões de rádio de gênero fiquem em linha, mas ocupando espaço igual */
+    /* permite que os botões de rádio de gênero fiquem em linha, mas ocupando espaço igual */
     .radio-group-genero label {
         flex-grow: 1;
         flex-basis: auto;
     }
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c6c70;
+    border-radius: 5px;
+    border: 2px solid #c7d7d7; /* cria um "espaço" ao redor do thumb */
 }
