@@ -1,13 +1,11 @@
-<!--testando git-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-    <link rel="stylesheet" href="/css/entrar.css">
-    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/frontend/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+    <link rel="stylesheet" href="/frontend/css/entrar.css">
+    <link rel="shortcut icon" href="/frontend/imgs/favicon.ico" type="image/x-icon">
     <title>Cadastro</title>
    
 </head>
@@ -19,7 +17,7 @@
 
 <!--Area do formulário-->
     <div class="pag-form">
-    <form action="index-cliente.html" method="get"> 
+    <form id="formCadastro">
 
     
         
@@ -27,22 +25,32 @@
         <label for="nome"></label>
         <input type="text"name="nome" id="nome" placeholder="Nome" required>
         
-        <!--Confirmar Senha-->
-        <label for="senha"></label>
-        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+        <!--Email-->
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
 
         <!--Senha-->
         <label for="senha"></label>
-        <input type="password" name="senha" id="senha" placeholder="Confirmar Senha" required>
+        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+
+        <!--Confirmar Senha-->
+        <label for="confirmarSenha"></label>
+        <input type="password" name="senha" id="confirmarSenha" placeholder="Confirmar Senha" required>
         
         <!--Botão-->
         <button type="submit">Cadastrar</button>
        
+        <p><br><a href="/frontend/src/tipocadastro.html">Voltar</a></p>
+    
+</form>        
 
-        <p> <br> <a href="form-int-cliente.html">Voltar</a></p>
-
-    </form>
+    <div id="mensagem"></div>
+    
+    <script src="/frontend/JavaScript/form_ext-client.js"></script>
+ 
     </div>
 
-<footer>© 2025 SIRIUST</footer>
+    <footer>© 2025 SIRIUST</footer>
+</body>
 </html>
+
