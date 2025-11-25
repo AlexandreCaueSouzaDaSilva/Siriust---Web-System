@@ -1,13 +1,11 @@
-<!--testando git-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-    <link rel="stylesheet" href="/css/entrar.css"> <!-- CSS ESPECIFICO DESSA PAGINA -->
-    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/frontend/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+    <link rel="stylesheet" href="/frontend/css/entrar.css"> <!-- CSS ESPECIFICO DESSA PAGINA -->
+    <link rel="shortcut icon" href="/frontend/imgs/favicon.ico" type="image/x-icon">
     <title>Iniciar Sessão</title>
    
 </head>
@@ -18,15 +16,15 @@
 <br>
 
 <!--Area do formulário-->
-    <div class="pag-form">
-    <form action="index-cliente.html" method="get"> 
+<div class="pag-form">
+    <form id="formlogin">
 
     
         
-        <!--nome-->
-        <label for="nome"></label>
-        <input type="text"name="nome" id="nome" placeholder="Nome" required>
-        
+        <!--E-mail-->
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+
 
         <!--Senha-->
         <label for="senha"></label>
@@ -39,7 +37,11 @@
         <p id="cadastre-se-nome"><a href="tipocadastro.html">Cadastre-se</a></p>
 
     </form>
-    </div>
+    <div id="mensagem"></div>
+</div>
 
 <footer>© 2025 SIRIUST</footer>
+
+<script src="/frontend/JavaScript/login.js"></script>
+</body>
 </html>

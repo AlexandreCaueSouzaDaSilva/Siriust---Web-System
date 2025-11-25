@@ -1,51 +1,59 @@
-<!--testando git-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-    <link rel="stylesheet" href="/css/entrar.css">
+    <link rel="stylesheet" href="/frontend/css/entrar.css">
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
     <title>Cadastro Profissional</title>
    
 </head>
 <body>
-<header>
-    <h1>SIRIUST</h1>
-</header>
-<br>
+    <header>
+        <h1>SIRIUST</h1>
+    </header>
+    <br>
 
-<!--Area do formulário-->
+    <!--Area do formulário-->
     <div class="pag-form">
-    <form action="index-profissional.html" method="get"> 
+    <form id="formCadastro">
 
     
         
         <!--nome-->
         <label for="nome"></label>
-        <input type="text"name="nome" id="nome" placeholder="Nome" required>
-        
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+
+        <!--E-mail-->
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+
+        <!--CRM - Código Médico-->
+        <label for="crm"></label>
+        <input type="text" name="crm" id="crm" placeholder="CRM (ex: 12345/PE)" required>
 
         <!--Senha-->
         <label for="senha"></label>
         <input type="password" name="senha" id="senha" placeholder="Senha" required>
-
-         <!--nome-->
-        <label for="nome"></label>
-        <input type="text"name="nome" id="nome" placeholder="Nome" required>
         
+        <!--Confirmar Senha-->
+        <label for="corfirmarSenha"></label>
+        <input type="password" name="senha" id="confirmarSenha" placeholder="Confirmar Senha" required>
         
         <!--Botão-->
         <button type="submit">Cadastrar</button>
        
 
 
-        <p> <br> <a href="tipocadastro.html">Voltar</a></p>
+        <p> <br> <a href="/frontend/src/tipocadastro.html">Voltar</a></p>
+    </form> 
+    
+    <!-- Div pra mostrar mensagens -->
+    <div id="mensagem"></div>
+</div>
 
-    </form>
-    </div>
-
+    <script src="/frontend/JavaScript/form_ext-prof.js"></script>
+</body>
 <footer>© 2025 SIRIUST</footer>
 </html>
