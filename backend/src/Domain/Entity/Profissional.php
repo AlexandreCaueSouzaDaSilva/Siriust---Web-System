@@ -1,52 +1,30 @@
 <?php
 
-namespace Domain\Entity\Profissional;
+// Entidade Profissional completa
+namespace Domain\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity]
+#[ORM\Table(name: "profissional")]
 class Profissional
 {
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
+    private ?int $id = null;
+
+    #[ORM\Column(type: "string", length: 255)]
     private string $nome;
-    private int $idade;
-    private string $senha;
-    private string $data_nasc;
-    private string $cpf;
-    private string $crm; 
 
-    public function __construct(string $nome, int $idade, string $cpf, string $data_nasc, string $senha, string $crm)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->senha = $senha;
-        $this->cpf = $cpf;
-        $this->data_nasc = $data_nasc;
-        $this->crm = $crm;
-    }
+    #[ORM\Column(type: "string", length: 255, unique: true)]
+    private string $email;
 
-    // Getters
-    public function getNome(): string
-    {
-        return $this->nome;
-    }
+    #[ORM\Column(type: "string", length: 255)]
+    private string $crm;
 
-    public function getIdade(): int
-    {
-        return $this->idade;
-    }
-    public function getSenha(): string
-    {
-        return $this->senha;
-    }
+    #[ORM\Column(type: "string", length: 255)]
+    private string $especialidade;
 
-    public function getDataNasc(): string
-    {
-        return $this->data_nasc;
-    }
-
-    public function getCpf(): string
-    {
-        return $this->cpf;
-    }
-    public function getCrm(): string
-    {
-        return $this->crm;
-    }
+    // Getters e setters...
 }

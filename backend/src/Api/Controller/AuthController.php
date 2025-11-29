@@ -1,5 +1,6 @@
 <?php
 
+// Codigo completo do AuthController.php
 namespace Controller;
 
 use Application\Services\UsuarioService; // usado para autenticação
@@ -144,3 +145,4 @@ class AuthController
         ]);
     }
 }
+

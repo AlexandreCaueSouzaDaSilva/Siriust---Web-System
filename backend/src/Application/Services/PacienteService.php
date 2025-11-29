@@ -2,59 +2,41 @@
 
 namespace Application\Services;
 
+use Doctrine\ORM\EntityManagerInterface;
+use Domain\Entity\Paciente;
 
-// Importa a entidade Paciente
-use Domain\Entity\Paciente\Paciente;
+class PacienteService
+{
+    private EntityManagerInterface $em;
 
-
-class PacienteService {
-   
-private string $jsonFile; // Caminho para o arquivo JSON
-
-    public function __construct(string $jsonFile = 'pacientes.json')
+    public function __construct(EntityManagerInterface $em)
     {
-        $this->jsonFile = $jsonFile;
+        $this->em = $em;
     }
 
-// Método para obter todos os pacientes
+    // Retorna todos os pacientes
     public function getAllPacientes(): array
     {
-        if (!file_exists($this->jsonFile)) {
-            return [];
-        }
-
-        // pega o conteudo do JSON e lê
-        $jsonData = file_get_contents($this->jsonFile);
-        $pacientesData = json_decode($jsonData, true);
-
- 
-        $pacientes = [];  
-        // Litsa os dados e cria objetos Paciente + mais facil de manipular
-        foreach ($pacientesData as $data) {
-            $pacientes[] = new Paciente(
-                $data['nome'],
-                $data['idade'],
-                $data['cpf'],
-                $data['data_nasc']
-            );
-        }
-
-        return $pacientes;
+        return $this->em->getRepository(Paciente::class)->findAll();
     }
 
-// Busca paciente por CPF
-    public function buscarPorCpf(string $cpf): ?Paciente // Paciente ou null
+    // Busca paciente por CPF
+    public function buscarPorCpf(string $cpf): ?Paciente
     {
-        $pacientes = $this->getAllPacientes();
+        return $this->em->getRepository(Paciente::class)
+                        ->findOneBy(['cpf' => $cpf]);
+    }
 
-        foreach ($pacientes as $paciente) {
-            if ($paciente->getCpf() === $cpf) {
-                return $paciente;
-            }
+    // Cadastra novo paciente
+    public function cadastrar(Paciente $paciente): bool
+    {
+        $existe = $this->buscarPorCpf($paciente->getCpf());
+        if ($existe) {
+            return false; // já existe paciente com esse CPF
         }
-        // Porque preciso saber se não encontrou um paciente com esse CPF
-        return null;
+
+        $this->em->persist($paciente);
+        $this->em->flush();
+        return true;
     }
 }
-
-

@@ -1,82 +1,54 @@
 <?php
 
-namespace Application\Services\UsuarioService;
+namespace Application\Services;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Domain\Entity\Usuario;
 
+// Classe do UsuarioService - responsável pela lógica de autenticação e cadastro de usuários
 class UsuarioService
 {
-    private string $jsonFile;
+    private EntityManagerInterface $em; // em = entity manager
 
-    public function __construct(string $jsonFile = 'usuarios.json')
+    public function __construct(EntityManagerInterface $em)
     {
-        $this->jsonFile = $jsonFile;
+        $this->em = $em;
     }
 
-    // Autentica o usuário email + senha
+    // Função auth - Autentica o usuário email + senha
     public function auth(string $email, string $senha): ?Usuario
     {
-        // Se o JSON não existe retorna nulo por que não tem como autenticar
-        if (!file_exists($this->jsonFile)) {
+        $usuario = $this->em->getRepository(Usuario::class)
+                            ->findOneBy(['email' => $email, 'ativo' => true]);
+
+        if (!$usuario) {
             return null;
         }
 
-        // Lê JSON
-        $jsonData = file_get_contents($this->jsonFile);
-        $usuariosData = json_decode($jsonData, true);
-
-        // Caso JSON esteja corrompido ou vazio
-        if (!is_array($usuariosData)) {
-            return null;
+        if ($usuario->verificarSenha($senha)) {
+            return $usuario;
         }
 
-        // Procura usuário
-        foreach ($usuariosData as $data) {
-            // Verifica se o email existe e se o usuário está ativo
-            if (
-                isset($data['email'], $data['senha']) &&
-                $data['email'] === $email &&
-                ($data['ativo'] ?? true) === true
-            ) {
-                // Cria um objeto Usuario a partir dos dados
-                $usuario = Usuario::fromArray($data);
-
-                // Verifica a senha com hash
-                if ($usuario->verificarSenha($senha)) {
-                    return $usuario;
-                }
-            }
-        }
-
-        // login flopou
         return null;
     }
 
-    // Cadastra novo usuário (paciente ou profissional)
+    // Função Cadastrar - Cadastro de novo usuário (paciente ou profissional)
     public function cadastrar(Usuario $usuario): bool
     {
-        $lista = [];
+        // Verifica se já existe email
+        $existe = $this->em->getRepository(Usuario::class)
+                           ->findOneBy(['email' => $usuario->getEmail()]);
 
-        // Se já existir JSON, carrega
-        if (file_exists($this->jsonFile)) {
-            $jsonData = file_get_contents($this->jsonFile);
-            $lista = json_decode($jsonData, true) ?: [];
+        if ($existe) {
+            return false; // Email já existe
         }
 
-        // Verifica se o email já está cadastrado
-        foreach ($lista as $user) {
-            if ($user['email'] === $usuario->getEmail()) {
-                return false; // Email já existe
-            }
-        }
+        // Hash da senha antes de salvar
+        $usuario->setSenha(password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
+ 
+        $this->em->persist($usuario); // Prepara para salvar ( Manda pro Banco quando der flush )
+        $this->em->flush(); // Aqui  o Flush é quem salva de fato no banco
 
-        // Adiciona novo user
-        $lista[] = $usuario->toArray();
-
-        // Salva de volta
-        return file_put_contents(
-            $this->jsonFile,
-            json_encode($lista, JSON_PRETTY_PRINT)
-        ) !== false;
+        return true; // Cadastro OK
     }
 }
