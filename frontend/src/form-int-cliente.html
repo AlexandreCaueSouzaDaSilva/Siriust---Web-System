@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cliente/Paciente - SIRIUST</title>
+    <title>Cadastro de Cliente - SIRIUST</title>
     <link rel="icon" type="image/png" href=" "> <!--FAvicon icone-->
     <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
@@ -20,11 +20,11 @@
 <div class="fomulario-cliente-paciente">
 <form action=" " method="get"> 
 
-<h2>Cadastro de Cliente/Paciente</h2>
+<h2>Cadastro de Cliente</h2>
 
 <!--Primeira Seção bonitinho-->
 <section>
-    <h3>Dados Cliente/Paciente</h3>
+    <h3>Dados de Cliente</h3>
    <div class="input-group">        
         <input type="text" name="nome-cliente" id="nome-cliente" placeholder="Nome Completo"></input><input type="text" id="raca-cor" name="raca_cor" placeholder="Raça/Cor"></input>
    </div> 
@@ -36,9 +36,9 @@
    </div>
 
    <div class="input-group">
-        <input type="radio" name="genero-cliente" value="Masculino">Masculino</input>
-        <input type="radio" name="genero-cliente" value="Feminino">Feminino</input>
-        <input type="radio" name="genero-cliente" value="Outro">Outro</input>
+         <input type="radio" name="genero-cliente" value="Masculino">Masculino</input>
+         <input type="radio" name="genero-cliente" value="Feminino">Feminino</input> 
+         <input type="radio" name="genero-cliente" value="Outro">Outro</input> 
    </div>
 
     <div class="input-group">   
@@ -68,18 +68,24 @@
 
 <!-- Terceira Seção -->
 <section>
+<div>
     <h3>Dados de Saúde</h3>
     <input type="text" name="plano-saude-cliente" id="plano-saude-cliente" placeholder="Plano de Saúde"></input>
     <input type="text" name="numero-carteirinha-cliente" id="numero-carteirinha-cliente" placeholder="Número da Carteirinha"></input>
     <input type="text" name="alergias-cliente" id="alergias-cliente" placeholder="Alergias"></input>
     <input type="text" name="medicacoes-cliente" id="medicacoes-cliente" placeholder="Medicações em Uso"></input>
     <textarea name="condicoes-medicas-cliente" id="condicoes-medicas-cliente" placeholder="Condições Médicas Preexistentes"></textarea>
-    <input type="text" name "tipo-sanguineo-cliente" id="tipo-sanguineo-cliente" placeholder="Tipo Sanguíneo"></input>
     <span class="radio-label">Tipo Sanguíneo:</span>
-    <label>A <input type="radio" name="tipo_sanguineo" value="A"></label>
-    <label>B <input type="radio" name="tipo_sanguineo" value="B"></label>
-    <label>AB <input type="radio" name="tipo_sanguineo" value="AB"></label>
-    <label>O <input type="radio" name="tipo_sanguineo" value="O"></label>
+<div class="input-RH">
+    <label>A+ <input type="radio" name="tipo_sanguineo" value="A+"></label>
+    <label>A- <input type="radio" name="tipo_sanguineo" value="A-"></label>   
+    <label>B+ <input type="radio" name="tipo_sanguineo" value="B+"></label>
+    <label>B- <input type="radio" name="tipo_sanguineo" value="B-"></label>
+    <label>AB+ <input type="radio" name="tipo_sanguineo" value="AB+"></label>
+    <label>AB- <input type="radio" name="tipo_sanguineo" value="AB-"></label>
+    <label>O+ <input type="radio" name="tipo_sanguineo" value="O+"></label>
+    <label>O- <input type="radio" name="tipo_sanguineo" value="O-"></label>
+</div>
 </section>
 <hr>
 
