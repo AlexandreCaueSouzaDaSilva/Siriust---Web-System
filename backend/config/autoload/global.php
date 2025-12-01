@@ -1,30 +1,35 @@
 <?php
+// Arquivo: backend/config/autoload/global.php - Código Final Corrigido
+
+use Doctrine\ORM\Mapping\Driver\AttributeDriver;
+use Doctrine\DBAL\Driver\PDO\MySQL\Driver;
+
 return [
     'doctrine' => [
         'connection' => [
             'orm_default' => [
-                  'driver'   => 'pdo_mysql',
-                'host'     => '127.0.0.1',   // pode usar localhost também
-                'port'     => 3306,
-                'user'     => 'root',
-                'password' => 'Super8677', 
-                'dbname'   => 'clinica',     // nome do banco
-                'charset'  => 'utf8mb4',
-
+                'driverClass' => Driver::class,
+                // Os parâmetros de conexão são herdados do local.php
             ],
         ],
 
         'driver' => [
-            'orm_default' => [
-                // Se estiver usando PHP 8 com atributos #[ORM], usar AttributeDriver, se nao AnnotationDriver
-                'class' => Doctrine\ORM\Mapping\Driver\AttributeDriver::class,
+            // 1. Definição do Driver Específico para o Módulo API
+            'api_entity_driver' => [ 
+                'class' => AttributeDriver::class,
                 'cache' => 'array',
-                'paths' => [
-                    __DIR__ . '/../src/Domain/Entity', // caminho para as entidades
+                // Caminho físico correto: ../../module/Api/src/Entity
+                'paths' => [ __DIR__ . '/../../module/Api/src/Entity' ], 
+            ],
+            
+            'orm_default' => [
+                'drivers' => [
+                    // 2. Associa o namespace de código 'Api\Entity' ao driver
+                    'Api\Entity' => 'api_entity_driver', 
                 ],
             ],
         ],
-
+        
         'configuration' => [
             'orm_default' => [
                 'proxy_dir' => __DIR__ . '/../../data/DoctrineORMModule/Proxy',

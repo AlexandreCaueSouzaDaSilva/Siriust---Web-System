@@ -1,7 +1,7 @@
 <?php
 
 // Entidade Paciente completa
-namespace Domain\Entity;
+namespace Api\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

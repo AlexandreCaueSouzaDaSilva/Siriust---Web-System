@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Services;
+namespace Api\Services;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Domain\Entity\Paciente;
