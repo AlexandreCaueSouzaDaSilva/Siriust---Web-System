@@ -135,9 +135,16 @@ form label {
     justify-content: center;
 }
 
-/* esconde os radios */
+  /*radios */
 input[type="radio"] {
-    display: none;
+    display: inline-block;
+}
+
+div.input-RH {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
 }
 
 /* efeito visual ao selecionar */

@@ -107,8 +107,19 @@
 - documentação do guia de instalação iniciado!
 - documentação melhorada
 
-<<<<<<< HEAD
-=======
+# 10.2 Fiz algumas correções no HTML do Cliente e no CSS que estava Muito simples (16.11.2025) Feita por Caio
+
+- alterações do codigo html form-cliente.html
+- adicionados divs
+- modificação no form-int.css
+- adicionado @media para responsividade dos campos do formulário
+- adicionado label, correção no cadastro do cliente
+
+#11.0 Fiz novamente correções, no HTML do prossional agora e fiz o css bonitinho. (17.11.2025) feita por Caio
+
+- fiz o codigo baseado no cliente
+- tenho que terminar o css do html profissional  
+
 # 11.1 - tentativa de ajuste ao css (10/11/2025) - Laryssa
 (main)
 - Ajustes em CSS
@@ -120,20 +131,25 @@
 - Correção de código
 -
 
-# 12 - dashboard adicionado - somente html (15/11/2025)
+12.0 Finalizando Html e css do Prof
+
+- fiz total o css
+- adicionei scrollbar pra forçar o rolamento da tela ou mouse, mas suavemente
+- no css tirei o h3 do html e colquei h2 porque ficou melhor
+- e adicionei tamebm no do cliente, mais nao precisa pegar o fotter, ta bonito tambem do mesmo jeito
+
+# 13 - dashboard adicionado - somente html (15/11/2025)
 (main)
 
 - Tentativa de Criar estrutura Visual inicial Do html principal qu econtém o CRUD
 
 
-# 13 - backend - estrutura adicionado (15/11/2025)
+# 14 - backend - estrutura adicionado (15/11/2025)
 (main)
 -  Pasta backend criada
 
 
-# 14 - Escrito codigo no module.php - pra teste apenas (16/11/2025) - Caue
+# 15 - Escrito codigo no module.php - pra teste apenas (16/11/2025) - Caue
 (main)
 
-# 15 - caio-alterações no form ajustes css (17/11/2025) - Caio
-
->>>>>>> a28c80e62ba48efb8159e36d5ed2d759253237ba
+# 161 - caio-alterações no form ajustes css (17/11/2025) - Caio
