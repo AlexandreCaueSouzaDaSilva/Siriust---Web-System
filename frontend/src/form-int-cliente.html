@@ -1,105 +1,103 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro de Cliente/Paciente - SIRIUST</title>
-        <link rel="icon" type="image/png" href=" "> <!--FAvicon icone-->
-        <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="/css/form-int.css">
-        </head>
-    <body>
-    <main>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente/Paciente - SIRIUST</title>
+    <link rel="icon" type="image/png" href=" "> <!--FAvicon icone-->
+    <link rel="stylesheet" href="/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/frontend/css/form-int-cliente.css">
+    </head>
+<body>
+   <main>
+       <header class="barra-flutuante">
+       <nav><h2>Siriust</h2></nav>
+       </header> 
 
-         <header class="barra-flutuante">
-      <nav><h2>Siriust</h2></nav>
-      </header> 
+<!-- Formulário todo--> 
+ 
+<div class="fomulario-cliente-paciente">
+<form action=" " method="get"> 
 
-    <!-- Formulário todo-->
-    
-    <div class="fomulario-cliente-paciente">
-    <form action=" " method="get"> 
+<h2>Cadastro de Cliente/Paciente</h2>
 
-    <h2>Cadastro de Cliente/Paciente</h2>
+<!--Primeira Seção bonitinho-->
+<section>
+    <h3>Dados Cliente/Paciente</h3>
+   <div class="input-group">        
+        <input type="text" name="nome-cliente" id="nome-cliente" placeholder="Nome Completo"></input><input type="text" id="raca-cor" name="raca_cor" placeholder="Raça/Cor"></input>
+   </div> 
+   
+   <div class="input-group">
+        <input type="text" placeholder="Nacionalidade">
+        <input type="text" placeholder="País">
+        <input type="text" name="nome-mae-cliente" id="nome-mae-cliente" placeholder="Nome da Mãe"></input>
+   </div>
 
-    <!--Primeira Seção bonitinho-->
-    <section>
-        <h4>Dados Cliente/Paciente</h4>
-    <div class="input-group">        
-            <input type="text" name="nome-cliente" id="nome-cliente" placeholder="Nome Completo"></input><input type="text" id="raca-cor" name="raca_cor" placeholder="Raça/Cor"></input>
+   <div class="input-group">
+        <input type="radio" name="genero-cliente" value="Masculino">Masculino</input>
+        <input type="radio" name="genero-cliente" value="Feminino">Feminino</input>
+        <input type="radio" name="genero-cliente" value="Outro">Outro</input>
+   </div>
+
+    <div class="input-group">   
+        <input type="text" name="cpf-cliente" id="cpf-cliente" placeholder="CPF"></input>
+        <input type="text" name="rg-cliente" id="rg-cliente" placeholder="RG"></input>
+        <input type="text" name="data-nascimento-cliente" id="data-nascimento-cliente" placeholder="Data de Nascimento"></input> 
     </div> 
     
     <div class="input-group">
-            <input type="text" placeholder="Nacionalidade">
-            <input type="text" placeholder="País">
-            <input type="text" name="nome-mae-cliente" id="nome-mae-cliente" placeholder="Nome da Mãe"></input>
+        <input type="text" name="telefone-cliente" id="telefone-cliente" placeholder="Telefone"></input>    
+        <input type="text" name="email-cliente" id="email-cliente" placeholder="E-mail"></input>
     </div>
+</section>
+<hr>
 
-    <div class="input-group">
-            <input type="radio" name="genero-cliente" value="Masculino">Masculino</input>
-            <input type="radio" name="genero-cliente" value="Feminino">Feminino</input>
-            <input type="radio" name="genero-cliente" value="Outro">Outro</input>
-        </div>
+<!-- Segunda Seção -->
+<section>
+    <h3>Dados Residenciais</h3>
+<section>
+    <input type="text" name="endereco-cliente" id="endereco-cliente" placeholder="Endereço"></input>
+    <input type="text" name="numero-endereco-cliente" id="numero-endereco-cliente" placeholder="Número"></input>
+    <input type="text" name="complemento-endereco-cliente" id="complemento-endereco-cliente" placeholder="Complemento"></input>
+    <input type="text" name="bairro-cliente" id="bairro-cliente" placeholder="Bairro"></input>
+    <input type="text" name="cidade-cliente" id="cidade-cliente" placeholder="Cidade"></input>
+</section>
+<hr>
 
-        <div class="input-group">   
-            <input type="text" name="cpf-cliente" id="cpf-cliente" placeholder="CPF"></input>
-            <input type="text" name="rg-cliente" id="rg-cliente" placeholder="RG"></input>
-            <input type="text" name="data-nascimento-cliente" id="data-nascimento-cliente" placeholder="Data de Nascimento"></input> 
-        </div> 
-        
-        <div class="input-group">
-            <input type="text" name="telefone-cliente" id="telefone-cliente" placeholder="Telefone"></input>    
-            <input type="text" name="email-cliente" id="email-cliente" placeholder="E-mail"></input>
-        </div>
-    </section>
-    <hr>
+<!-- Terceira Seção -->
+<section>
+    <h3>Dados de Saúde</h3>
+    <input type="text" name="plano-saude-cliente" id="plano-saude-cliente" placeholder="Plano de Saúde"></input>
+    <input type="text" name="numero-carteirinha-cliente" id="numero-carteirinha-cliente" placeholder="Número da Carteirinha"></input>
+    <input type="text" name="alergias-cliente" id="alergias-cliente" placeholder="Alergias"></input>
+    <input type="text" name="medicacoes-cliente" id="medicacoes-cliente" placeholder="Medicações em Uso"></input>
+    <textarea name="condicoes-medicas-cliente" id="condicoes-medicas-cliente" placeholder="Condições Médicas Preexistentes"></textarea>
+    <input type="text" name "tipo-sanguineo-cliente" id="tipo-sanguineo-cliente" placeholder="Tipo Sanguíneo"></input>
+    <span class="radio-label">Tipo Sanguíneo:</span>
+    <label>A <input type="radio" name="tipo_sanguineo" value="A"></label>
+    <label>B <input type="radio" name="tipo_sanguineo" value="B"></label>
+    <label>AB <input type="radio" name="tipo_sanguineo" value="AB"></label>
+    <label>O <input type="radio" name="tipo_sanguineo" value="O"></label>
+</section>
+<hr>
 
-    <!-- Segunda Seção -->
-    <section>
-        <h4>Dados Residenciais</h4>
-    <section>
-        <input type="text" name="endereco-cliente" id="endereco-cliente" placeholder="Endereço"></input>
-        <input type="text" name="numero-endereco-cliente" id="numero-endereco-cliente" placeholder="Número"></input>
-        <input type="text" name="complemento-endereco-cliente" id="complemento-endereco-cliente" placeholder="Complemento"></input>
-        <input type="text" name="bairro-cliente" id="bairro-cliente" placeholder="Bairro"></input>
-        <input type="text" name="cidade-cliente" id="cidade-cliente" placeholder="Cidade"></input>
-    </section>
-    <hr>
+<!-- Quarta Seção -->
+<section>
+    <h3>Contato de Emergência</h3>
+    <input type="text" name="nome-contato-emergencia" id="nome-contato-emergencia" placeholder="Nome do Contato"></input>
+    <input type="text" nomre="telefone-contato-emergencia" id="telefone-contato-emergencia" placeholder="Telefone do Contato"></input>
+    <input type="text" name="parentesco-contato-emergencia" id="parentesco-contato-emergencia" placeholder="Parentesco"></input>
+    <textarea name="observacoes-contato-emergencia" id="observacoes-contato-emergencia" placeholder="Observações Adicionais"></textarea>
+</section>
+<hr>
+<input type="submit" value="Enviar Cadastro">
+</form>
+</div>
 
-    <!-- Terceira Seção -->
-    <section>
-        <h4>Dados de Saúde</h4>
-        <input type="text" name="plano-saude-cliente" id="plano-saude-cliente" placeholder="Plano de Saúde"></input>
-        <input type="text" name="numero-carteirinha-cliente" id="numero-carteirinha-cliente" placeholder="Número da Carteirinha"></input>
-        <input type="text" name="alergias-cliente" id="alergias-cliente" placeholder="Alergias"></input>
-        <input type="text" name="medicacoes-cliente" id="medicacoes-cliente" placeholder="Medicações em Uso"></input>
-        <textarea name="condicoes-medicas-cliente" id="condicoes-medicas-cliente" placeholder="Condições Médicas Preexistentes"></textarea>
-        <input type="text" name "tipo-sanguineo-cliente" id="tipo-sanguineo-cliente" placeholder="Tipo Sanguíneo"></input>
-        <span class="radio-label">Tipo Sanguíneo:</span>
-        <label>A <input type="radio" name="tipo_sanguineo" value="A"></label>
-        <label>B <input type="radio" name="tipo_sanguineo" value="B"></label>
-        <label>AB <input type="radio" name="tipo_sanguineo" value="AB"></label>
-        <label>O <input type="radio" name="tipo_sanguineo" value="O"></label>
-    </section>
-    <hr>
+</main>
 
-    <!-- Quarta Seção -->
-    <section>
-        <h4>Contato de Emergência</h4>
-        <input type="text" name="nome-contato-emergencia" id="nome-contato-emergencia" placeholder="Nome do Contato"></input>
-        <input type="text" nomre="telefone-contato-emergencia" id="telefone-contato-emergencia" placeholder="Telefone do Contato"></input>
-        <input type="text" name="parentesco-contato-emergencia" id="parentesco-contato-emergencia" placeholder="Parentesco"></input>
-        <textarea name="observacoes-contato-emergencia" id="observacoes-contato-emergencia" placeholder="Observações Adicionais"></textarea>
-    </section>
-    <hr>
-    <input type="submit" value="Enviar Cadastro">
-    </form>
-    </div>
-
-    </main>
-
-    <footer>© 2025 SIRIUST</footer>
-    </body>
-    </html>
+<footer>© 2025 SIRIUST</footer>
+</body>
+</html>
