@@ -1,0 +1,196 @@
+/* -- fundo da Página -- */
+body {  
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #b7d0d3, #2c6c70);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* -- barra superior -- */
+.barra-flutuante {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+}
+
+.barra-flutuante nav h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+/* --container geral -- */
+.formulario-profissional {
+    width: 60%;
+    margin: 50px auto;
+    background: #e7f0f1;
+    padding: 40px 60px;
+    border-radius: 10px; /* deixa as bordas arredondadas */
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2); /* sombra abaixo da caixa */
+    border: 1px solid #c3d1d1; /* borda suave ao redor */
+}
+
+.formulario-profissional h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2d2e;
+    font-size: 26px;
+}
+
+/* -- seções -- */
+section {
+    margin-bottom: 35px;
+}
+
+section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1f2d2e;
+    text-align: center;
+    border-bottom: 1px solid #b7c7c7;
+    padding-bottom: 5px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -- linha separadora -- */
+hr {
+    border: none;
+    border-top: 1px solid #b7c7c7;
+    margin: 30px 0;
+}
+
+/* -- estilo dos inputs -- */
+.input-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #9bb6b6;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #ffffff;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2c6c70;
+    box-shadow: 0 0 4px rgba(44,108,112,0.4);
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* -- inputs individuais fora do group -- */
+section input {
+    margin-bottom: 15px;
+}
+
+/* -- botões de rádio -- */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.input-group input[type="radio"] {
+    width: auto;
+}
+
+/*-- botão de enviar -- */
+input[type="submit"] {
+    display: block;
+    width: 40%;
+    margin: 30px auto;
+    padding: 12px 20px;
+    background: #2c6c70;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+input[type="submit"]:hover {
+    background: #1f5054;
+}
+
+/* -- rodapé -- */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto; /* é o que garante que a página possa rolar  */
+    scroll-behavior: smooth;/* -- ele vai forçar a rolagem funcionar normalmente e ativa o scroll suave na página. --*/
+}
+
+/* se algum elemento com posição fixa estiver impedindo o scroll, essa regra garante que o body volte a responder ao movimento do mouse.*/
+body {
+    -webkit-overflow-scrolling: touch; /* melhor experiência em iOS, etc. */
+}
+
+/* -- scrollbar personalizada (WebKit: Chrome, Edge, Opera) -- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c7d7d7;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c6c70;
+    border-radius: 5px;
+    border: 2px solid #c7d7d7; /* cria um "espaço" ao redor do thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f5054;
+}
+
+/* Scroll para Fire*/
+* {
+    scrollbar-width: thin; /* thin | auto | none */
+    scrollbar-color: #2c6c70 #c7d7d7; /* thumb e track */
+}
+
+/* --- responsividade --- */
+@media (max-width: 768px) {
+.formulario-profissional {
+    width: 90%;
+padding: 1.5rem;
+}
+input:not([type="radio"]):not([type="submit"]),
+textarea,
+.input-group input[placeholder="Nome Completo"],
+.input-group input[placeholder="Email"] {
+flex-basis: 100%;
+}
+}

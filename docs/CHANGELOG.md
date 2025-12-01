@@ -98,6 +98,7 @@
 - adicionei novo caminhos de botões de navegação entre paginas
 
 ## 10.1 - Leve ajustes e correções (09/11/2025) - feito por Cauê
+(main)
 
 - Correção do background no viewport no index-cliente.html
 - Modificação necessária no fallback.css
@@ -106,3 +107,33 @@
 - documentação do guia de instalação iniciado!
 - documentação melhorada
 
+<<<<<<< HEAD
+=======
+# 11.1 - tentativa de ajuste ao css (10/11/2025) - Laryssa
+(main)
+- Ajustes em CSS
+
+
+
+# 11.2 - merge lary-branch into main (10/11/2025) - Laryssa
+(main)
+- Correção de código
+-
+
+# 12 - dashboard adicionado - somente html (15/11/2025)
+(main)
+
+- Tentativa de Criar estrutura Visual inicial Do html principal qu econtém o CRUD
+
+
+# 13 - backend - estrutura adicionado (15/11/2025)
+(main)
+-  Pasta backend criada
+
+
+# 14 - Escrito codigo no module.php - pra teste apenas (16/11/2025) - Caue
+(main)
+
+# 15 - caio-alterações no form ajustes css (17/11/2025) - Caio
+
+>>>>>>> a28c80e62ba48efb8159e36d5ed2d759253237ba

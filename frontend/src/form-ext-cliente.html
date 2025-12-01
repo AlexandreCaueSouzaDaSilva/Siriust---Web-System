@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/fallback.css"> <!-- CSS ESSENCIAL: -->
+    <link rel="stylesheet" href="/frontend/css/entrar.css">
+    <link rel="shortcut icon" href="/frontend/imgs/favicon.ico" type="image/x-icon">
+    <title>Cadastro</title>
+   
+</head>
+<body>
+<header>
+    <h1>SIRIUST</h1>
+</header>
+<br>
+
+<!--Area do formulário-->
+    <div class="pag-form">
+    <form id="formCadastro">
+
+    
+        
+        <!--nome-->
+        <label for="nome"></label>
+        <input type="text"name="nome" id="nome" placeholder="Nome" required>
+        
+        <!--Email-->
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+
+        <!--Senha-->
+        <label for="senha"></label>
+        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+
+        <!--Confirmar Senha-->
+        <label for="confirmarSenha"></label>
+        <input type="password" name="senha" id="confirmarSenha" placeholder="Confirmar Senha" required>
+        
+        <!--Botão-->
+        <button type="submit">Cadastrar</button>
+       
+        <p><br><a href="/frontend/src/tipocadastro.html">Voltar</a></p>
+    
+</form>        
+
+    <div id="mensagem"></div>
+    
+    <script src="/frontend/JavaScript/form_ext-client.js"></script>
+ 
+    </div>
+
+    <footer>© 2025 SIRIUST</footer>
+</body>
+</html>
+

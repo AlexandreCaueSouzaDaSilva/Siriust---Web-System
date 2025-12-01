@@ -1,0 +1,180 @@
+/* --- Variáveis de cor --- */
+:root {
+    --bg-dark-teal: #2c4848; 
+    --form-container-bg: #eaf0f0; 
+    --form-field-bg: #fdfaf6;
+    --text-dark: #333;
+    --text-light: #f5f5f5;
+    --border-color: #5d7a7a;
+    --header-font: 'Merriweather', serif;
+    --body-font: 'Lato', sans-serif;
+    --gap: 1rem;
+}
+
+/* --- Reset básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Corpo da página --- */
+body {
+    font-family: var(--body-font);
+    background: linear-gradient(135deg, rgb(242, 246, 246), rgb(129, 167, 169), rgb(4, 78, 84));
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 2rem var(--gap);
+    overflow-y: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-light);
+    background-color: var(--bg-dark-teal);
+    opacity: 0.8;
+}
+
+/* --- Formulário principal --- */
+.fomulario-cliente-paciente {
+    max-width: 900px;
+    margin: auto;
+    background-color: var(--form-container-bg);
+    padding: 2rem;
+    border: 2px solid var(--bg-dark-teal);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Títulos --- */
+h2 {
+    font-family: var(--header-font);
+    text-align: center;
+    color: var(--bg-dark-teal);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-family: var(--header-font);
+    color: var(--bg-dark-teal);
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+/* --- Estrutura de seções do formulário --- */
+section > .input-group,
+section > section {
+display: flex;
+flex-wrap: wrap;
+gap: var(--gap);
+margin-bottom: var(--gap);
+}
+
+/* --- Inputs e textarea --- */
+input:not([type="radio"]):not([type="submit"]),
+textarea {
+background-color: var(--form-field-bg);
+border: 1px solid var(--border-color);
+border-radius: 4px;
+padding: 0.75rem 1rem;
+font-size: 1rem;
+color: var(--text-dark);
+flex: 1;
+}
+
+textarea {
+min-height: 100px;
+resize: vertical;
+flex-basis: 100%;
+}
+
+/* larguras específicas */
+.input-group input[placeholder="Nome Completo"] {
+flex-basis: 60%;
+}
+
+.input-group input[placeholder="Raça/Cor"] {
+flex-basis: 30%;
+}
+
+input[name="numero-endereco-cliente"] {
+flex-basis: 100px;
+}
+
+/* --- Radio buttons --- */
+.radio-label {
+    font-weight: bold;
+    color: var(--bg-dark-teal);
+}
+
+/* estilo dos "botões" dos radios */
+form label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--form-field-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1;
+    justify-content: center;
+}
+
+/* esconde os radios */
+input[type="radio"] {
+    display: none;
+}
+
+/* efeito visual ao selecionar */
+input[type="radio"]:checked + label {
+background-color: #dce5e5;
+border-color: var(--bg-dark-teal);
+}
+
+/* --- Botão enviar --- */
+input[type="submit"] {
+display: block;
+width: 50%;
+min-width: 200px;
+margin: 2rem auto 0;
+padding: 1rem;
+font-family: var(--header-font);
+font-size: 1.25rem;
+color: var(--text-light);
+background-color: var(--bg-dark-teal);
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3a6b6b;
+}
+
+/* --- responsividade --- */
+@media (max-width: 768px) {
+.fomulario-cliente-paciente {
+padding: 1.5rem;
+}
+input:not([type="radio"]):not([type="submit"]),
+textarea,
+.input-group input[placeholder="Nome Completo"],
+.input-group input[placeholder="Raça/Cor"] {
+flex-basis: 100%;
+}
+}
