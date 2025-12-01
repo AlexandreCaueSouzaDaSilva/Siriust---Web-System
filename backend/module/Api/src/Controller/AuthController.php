@@ -1,7 +1,7 @@
 <?php
 
 // Codigo completo do AuthController.php
-namespace Controller;
+namespace Api\Controller;
 
 use Application\Services\UsuarioService; // usado para autenticação
 use Domain\Entity\Usuario; // Entidade Usuário
