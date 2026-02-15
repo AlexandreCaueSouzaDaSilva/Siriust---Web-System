@@ -1,6 +1,5 @@
 <?php
 
-// Entidade Usuario completa
 namespace Api\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -20,6 +19,7 @@ class Usuario
     #[ORM\Column(type: "string", length: 255, unique: true)]
     private string $email;
 
+    // Armazena sempre o hash da senha
     #[ORM\Column(type: "string", length: 255)]
     private string $senha;
 
@@ -29,23 +29,49 @@ class Usuario
     #[ORM\Column(type: "boolean")]
     private bool $ativo = true;
 
+    // Construtor força dados essenciais
+    public function __construct(string $nome, string $email, string $senha, string $tipo = 'paciente')
+    {
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->setSenha($senha); // já aplica hash
+        $this->tipo = $tipo;
+        $this->ativo = true;
+    }
+
     // Getters
     public function getId(): ?int { return $this->id; }
     public function getNome(): string { return $this->nome; }
     public function getEmail(): string { return $this->email; }
-    public function getSenha(): string { return $this->senha; }
     public function getTipo(): string { return $this->tipo; }
     public function isAtivo(): bool { return $this->ativo; }
 
     // Setters
     public function setNome(string $nome): void { $this->nome = $nome; }
     public function setEmail(string $email): void { $this->email = $email; }
-    public function setSenha(string $senha): void { $this->senha = $senha; }
-    public function setTipo(string $tipo): void { $this->tipo = $tipo; }
+
+    // Sempre aplica hash ao definir senha
+    public function setSenha(string $senha): void
+    {
+        // Usa bcrypt por padrão; pode trocar para Argon2id se disponível
+        $this->senha = password_hash($senha, PASSWORD_DEFAULT);
+    }
+
+    public function setTipo(string $tipo): void
+    {
+        // Valida valores permitidos
+        $tiposValidos = ['paciente', 'profissional', 'admin'];
+        if (!in_array($tipo, $tiposValidos, true)) {
+            throw new \InvalidArgumentException("Tipo de usuário inválido.");
+        }
+        $this->tipo = $tipo;
+    }
+
     public function setAtivo(bool $ativo): void { $this->ativo = $ativo; }
 
-    // Verificar senha (mantém a lógica de hash/verify) - usada na autenticação
-    public function verificarSenha(string $senha): bool {
+    // Verificar senha com hash
+    public function verificarSenha(string $senha): bool
+    {
         return password_verify($senha, $this->senha);
     }
 }

@@ -3,52 +3,51 @@
 namespace Api\Services;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Domain\Entity\Usuario;
+use Api\Entity\Usuario;
 
-// Classe do UsuarioService - responsável pela lógica de autenticação e cadastro de usuários
 class UsuarioService
 {
-    private EntityManagerInterface $em; // em = entity manager
+    private EntityManagerInterface $em;
 
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
     }
 
-    // Função auth - Autentica o usuário email + senha
+    /**
+     * Autentica o usuário pelo email e senha.
+     * Retorna o objeto Usuario se válido, ou null se inválido.
+     */
     public function auth(string $email, string $senha): ?Usuario
     {
         $usuario = $this->em->getRepository(Usuario::class)
-                            ->findOneBy(['email' => $email, 'ativo' => true]);
+                            ->findOneBy(['email' => strtolower($email), 'ativo' => true]);
 
-        if (!$usuario) {
-            return null;
-        }
-
-        if ($usuario->verificarSenha($senha)) {
+        if ($usuario && $usuario->verificarSenha($senha)) {
             return $usuario;
         }
 
         return null;
     }
 
-    // Função Cadastrar - Cadastro de novo usuário (paciente ou profissional)
-    public function cadastrar(Usuario $usuario): bool
+    /**
+     * Cadastra um novo usuário.
+     * Retorna o objeto Usuario se cadastrado com sucesso, ou null se email já existe.
+     */
+    public function cadastrar(Usuario $usuario): ?Usuario
     {
-        // Verifica se já existe email
         $existe = $this->em->getRepository(Usuario::class)
-                           ->findOneBy(['email' => $usuario->getEmail()]);
+                           ->findOneBy(['email' => strtolower($usuario->getEmail())]);
 
         if ($existe) {
-            return false; // Email já existe
+            return null;
         }
 
-        // Hash da senha antes de salvar
-        $usuario->setSenha(password_hash($usuario->getSenha(), PASSWORD_DEFAULT));
- 
-        $this->em->persist($usuario); // Prepara para salvar ( Manda pro Banco quando der flush )
-        $this->em->flush(); // Aqui  o Flush é quem salva de fato no banco
+        // Aqui não precisa aplicar password_hash manualmente,
+        // pois o setSenha da entidade já faz isso.
+        $this->em->persist($usuario);
+        $this->em->flush();
 
-        return true; // Cadastro OK
+        return $usuario;
     }
 }
